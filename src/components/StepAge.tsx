@@ -2,7 +2,11 @@ import OptionButton from "./OptionButton";
 
 const ages = ["10대", "20대", "30대", "40대", "50대 이상"];
 
-export default function StepAge({ onSelect }) {
+type StepAgeProps = {
+  onSelect: (value: string) => void;
+};
+
+export default function StepAge({ onSelect }: StepAgeProps) {
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold text-center">
