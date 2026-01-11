@@ -79,15 +79,12 @@ const stores = [
   ];
   
   
-  export function recommendStore(answer) {
-    const filtered = stores.filter(store =>
-      store.gender.includes(answer.gender) &&
-      store.age.includes(answer.age) &&
-      store.budget.includes(answer.budget) &&
-      store.category === answer.interest
+  export function recommendStores(answer) {
+    return stores.filter(store =>
+      (!answer.gender || store.gender.includes(answer.gender)) &&
+      (!answer.age || store.age.includes(answer.age)) &&
+      (!answer.budget || store.budget.includes(answer.budget)) &&
+      (!answer.interest || store.category === answer.interest)
     );
-  
-    if (filtered.length > 0) return filtered[0];
-    return { name: "조건에 맞는 매장이 없습니다 😢" };
   }
   

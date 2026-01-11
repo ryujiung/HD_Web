@@ -14,7 +14,7 @@ import Result from "@/components/Result";
  * ------------------- */
 type Answer = {
   gender?: string;
-  age?: string | number;
+  age?: string; // ✅ string만
   budget?: string;
   interest?: string;
 };
@@ -22,6 +22,11 @@ type Answer = {
 export default function Home() {
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  /** 🔥 새로고침 시 항상 1단계로 */
+  useEffect(() => {
+    router.replace("/?step=1");
+  }, [router]);
 
   /** URL에서 step 읽기 */
   const step = Number(searchParams.get("step") || 1);
