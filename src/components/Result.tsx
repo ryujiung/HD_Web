@@ -1,54 +1,26 @@
-import { recommendStores } from "@/lib/recommend";
+"use client";
 
-type Answer = {
-  gender?: string;
-  age?: string;
-  budget?: string;
-  interest?: string;
-};
+import { Answer } from "@/lib/brandScore";
+import { getTopBrand } from "@/lib/brandScore";
 
-type Store = {
-  name: string;
-};
+export default function Result({ answer }: { answer: Answer }) {
+  const topBrand = getTopBrand(answer);
 
-type ResultProps = {
-  answer: Answer;
-};
-
-export default function Result({ answer }: ResultProps) {
-  const stores = recommendStores(answer);
-  console.log("추천 결과 개수:", stores.length);
-  console.log("추천 결과:", stores);
-
+  if (!topBrand) return null;
 
   return (
-    <div className="space-y-6 text-center">
-      <h2 className="text-2xl font-semibold">
-        추천 결과 🎉
+    <div className="text-center space-y-6">
+      <h2 className="text-2xl font-bold">
+        당신을 위한 추천 브랜드
       </h2>
 
-      {stores.length === 0 ? (
-        <div className="bg-gray-100 p-6 rounded-xl text-gray-500">
-          조건에 맞는 매장이 없습니다 😢
-        </div>
-      ) : (
-        <div className="space-y-3">
-          {stores.map(store => (
-            <div
-              key={store.name}
-              className="bg-indigo-50 p-4 rounded-xl shadow text-lg font-medium"
-            >
-              {store.name}
-            </div>
-          ))}
-        </div>
-      )}
-
-      <div className="text-sm text-gray-500 text-left pt-4">
-        <p>성별: {answer.gender ?? "-"}</p>
-        <p>나이: {answer.age ?? "-"}</p>
-        <p>예산: {answer.budget ?? "-"}</p>
-        <p>관심사: {answer.interest ?? "-"}</p>
+      <div className="border border-gray-700 rounded-xl p-6 space-y-2">
+        <p className="text-xl font-semibold">
+          {topBrand.name}
+        </p>
+        <p className="text-gray-500">
+          적합도 점수 {topBrand.score}점
+        </p>
       </div>
     </div>
   );

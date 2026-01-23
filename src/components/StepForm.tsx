@@ -1,105 +1,130 @@
 "use client";
 
 import { useState } from "react";
-import OptionButton from "./OptionButton";
+
+import StepGender from "./StepGender";
+import StepStyle from "./StepStyle";
+import StepBudget from "./StepBudget";
+import StepInterest from "./StepInterest";
 import Result from "./Result";
 
 /** 답변 타입 */
 type Answers = {
-  gender: string;
-  age: string;
-  budget: string;
-  interest: string;
+  gender?: string;
+  style?: string;
+  budget?: string;
+  interest?: string;
 };
 
-/** step key 타입 */
-type AnswerKey = keyof Answers;
-
 export default function StepForm() {
-  const [step, setStep] = useState<number>(1);
+  // 🔥 step 0 = 메인 화면
+  const [step, setStep] = useState<number>(0);
 
-  const [answers, setAnswers] = useState<Answers>({
-    gender: "",
-    age: "",
-    budget: "",
-    interest: ""
-  });
+  const [answers, setAnswers] = useState<Answers>({});
 
-  const nextStep = () => setStep(prev => prev + 1);
-  const prevStep = () => setStep(prev => (prev > 1 ? prev - 1 : prev));
-
-  const handleAnswer = (key: AnswerKey, value: string) => {
+  const next = <K extends keyof Answers>(key: K, value?: string) => {
     setAnswers(prev => ({ ...prev, [key]: value }));
-    nextStep();
+    setStep(prev => prev + 1);
+  };
+
+  const prev = () => {
+    setStep(prev => (prev > 0 ? prev - 1 : prev));
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 space-y-6">
+    <div className="space-y-6">
+      {/* =====================
+          STEP 0 : 메인 화면
+      ====================== */}
+      {step === 0 && (
+        <div className="min-h-[60vh] flex flex-col justify-center items-center text-center space-y-6">
+          <h1 className="text-3xl font-bold">
+            AI Personal Shopper
+          </h1>
+
+          <p className="text-gray-600">
+            몇 가지 질문으로 당신에게 맞는 브랜드를 추천해드릴게요
+          </p>
+
+          <button
+            onClick={() => setStep(1)}
+            className="
+              px-6 py-3
+              border border-gray-700
+              rounded-lg
+              font-semibold
+              hover:bg-gray-100
+              transition
+            "
+          >
+            Get Started
+          </button>
+        </div>
+      )}
+
+      {/* =====================
+          STEP 1 : 성별
+      ====================== */}
       {step === 1 && (
-        <div className="space-y-4">
-          <h2 className="text-xl font-bold">성별을 선택하세요</h2>
-          <OptionButton label="남성" onClick={() => handleAnswer("gender", "male")} />
-          <OptionButton label="여성" onClick={() => handleAnswer("gender", "female")} />
-        </div>
+        <>
+          <StepGender onSelect={v => next("gender", v)} />
+        </>
       )}
 
+      {/* =====================
+          STEP 2 : 스타일
+      ====================== */}
       {step === 2 && (
-        <div className="space-y-4">
-          <h2 className="text-xl font-bold">나이를 선택하세요</h2>
-          {["10대", "20대", "30대", "40대", "50대"].map(age => (
-            <OptionButton
-              key={age}
-              label={age}
-              onClick={() => handleAnswer("age", age)}
-            />
-          ))}
-          <button onClick={prevStep} className="text-gray-600 underline">
-            ← 이전
-          </button>
-        </div>
+        <>
+          <StepStyle onSelect={v => next("style", v)} />
+          <BackButton onClick={prev} />
+        </>
       )}
 
+      {/* =====================
+          STEP 3 : 예산
+      ====================== */}
       {step === 3 && (
-        <div className="space-y-4">
-          <h2 className="text-xl font-bold">예산을 선택하세요</h2>
-          {["1~3만원", "3~5만원", "5~10만원", "10만원 이상"].map(budget => (
-            <OptionButton
-              key={budget}
-              label={budget}
-              onClick={() => handleAnswer("budget", budget)}
-            />
-          ))}
-          <button onClick={prevStep} className="text-gray-600 underline">
-            ← 이전
-          </button>
-        </div>
+        <>
+          <StepBudget onSelect={v => next("budget", v)} />
+          <BackButton onClick={prev} />
+        </>
       )}
 
+      {/* =====================
+          STEP 4 : 관심 카테고리
+      ====================== */}
       {step === 4 && (
-        <div className="space-y-4">
-          <h2 className="text-xl font-bold">관심사를 선택하세요</h2>
-          {[
-            "글로벌 패션",
-            "VIP 서비스",
-            "리빙",
-            "패션잡화 · ACC",
-            "기타 · 편의시설",
-            "워치",
-            "남성 럭셔리패션"
-          ].map(interest => (
-            <OptionButton
-              key={interest}
-              label={interest}
-              onClick={() => handleAnswer("interest", interest)}
-            />
-          ))}
-          <button onClick={prevStep} className="text-gray-600 underline">
-            ← 이전
-          </button>
-        </div>
+        <>
+          <StepInterest onSelect={v => next("interest", v)} />
+          <BackButton onClick={prev} />
+        </>
       )}
 
-      {step === 5 && <Result answer={answers} />}
+      {/* =====================
+          STEP 5 : 결과
+      ====================== */}
+      {step === 5 && (
+        <Result answer={answers} />
+      )}
     </div>
+  );
+}
+
+/** 이전 버튼 */
+function BackButton({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      className="
+        w-full py-2
+        border border-gray-700
+        rounded-lg
+        hover:bg-gray-100
+        transition
+      "
+    >
+      ← 이전
+    </button>
   );
 }
