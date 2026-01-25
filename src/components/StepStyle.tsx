@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import OptionButton from "./OptionButton";
 
 const styles = [
@@ -11,14 +14,24 @@ const styles = [
 ];
 
 export default function StepStyle({
-  onSelect,
+  onNext,
 }: {
-  onSelect: (v: string | undefined) => void;
+  onNext: (styles?: string[]) => void;
 }) {
+  const [selected, setSelected] = useState<string[]>([]);
+
+  const toggleStyle = (style: string) => {
+    setSelected(prev =>
+      prev.includes(style)
+        ? prev.filter(s => s !== style)
+        : [...prev, style]
+    );
+  };
+
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold">
-        선호하는 스타일을 선택해주세요
+      <h2 className="text-xl font-bold text-center">
+        선호하는 스타일을 순서대로 선택해주세요(복수선택 가능)
       </h2>
 
       <div className="grid grid-cols-2 gap-4">
@@ -26,16 +39,34 @@ export default function StepStyle({
           <OptionButton
             key={style}
             label={style}
-            onClick={() => onSelect(style)}
+            active={selected.includes(style)}
+            onClick={() => toggleStyle(style)}
           />
         ))}
 
-        {/* ✅ 상관없음 */}
+        {/* 상관없음 */}
         <OptionButton
           label="상관없음"
-          onClick={() => onSelect(undefined)}
+          active={selected.length === 0}
+          onClick={() => setSelected([])}
         />
       </div>
+
+      <button
+        onClick={() =>
+          onNext(selected.length > 0 ? selected : undefined)
+        }
+        className="
+          w-full py-2
+          border border-gray-700
+          rounded-lg
+          font-semibold
+          hover:bg-gray-100
+          transition
+        "
+      >
+        다음
+      </button>
     </div>
   );
 }
