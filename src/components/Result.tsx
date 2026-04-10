@@ -1,6 +1,7 @@
 "use client";
 
 import { getTopBrands } from "@/lib/brandScore";
+import { brandInfo } from "@/lib/brandInfo";
 import { Answers } from "./StepForm";
 
 export default function Result({
@@ -11,6 +12,9 @@ export default function Result({
   onReset: () => void;
 }) {
   const results = getTopBrands(answer);
+  const topBrand = results[0];
+
+  const info = brandInfo[topBrand.name];
 
   return (
     <div className="space-y-6">
@@ -18,31 +22,45 @@ export default function Result({
         추천 브랜드 TOP 3
       </h2>
 
-      {results.map((r, index) => (
+      {/* 🔥 1위 브랜드 상세 */}
+      <div className="space-y-3 border p-5 rounded-xl">
+        <div className="text-xl font-bold">
+          🥇 {topBrand.name}
+        </div>
+
+        {info && (
+          <>
+            <img
+              src={info.image}
+              alt={topBrand.name}
+              className="w-full h-60 object-cover rounded-lg"
+            />
+
+            <p className="text-gray-600">
+              {info.description}
+            </p>
+          </>
+        )}
+
+        <div className="font-semibold">
+          {topBrand.score}점
+        </div>
+      </div>
+
+      {/* 나머지 Top3 */}
+      {results.slice(1).map((r, index) => (
         <div
           key={r.name}
-          className="
-            p-5
-            border border-gray-700
-            rounded-xl
-            flex
-            justify-between
-            items-center
-          "
+          className="p-4 border rounded-lg flex justify-between"
         >
           <div>
-            <div className="font-semibold">
-              {index + 1}. {r.name}
-            </div>
+            {index + 2}. {r.name}
           </div>
 
-          <div className="font-bold">
-            {r.score}점
-          </div>
+          <div>{r.score}점</div>
         </div>
       ))}
 
-      {/* 다시 시작 버튼 */}
       <button
         onClick={onReset}
         className="
