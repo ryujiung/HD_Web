@@ -1,10 +1,10 @@
 import OptionButton from "./OptionButton";
 
 const budgets = [
-  "저가 브랜드",
-  "중가 브랜드",
-  "프리미엄 브랜드",
-  "명품 브랜드",
+  "MID-LOW ",
+  "MID",
+  "MID-HIGH",
+  "HIGH",
   "잘 모르겠어요",
 ];
 

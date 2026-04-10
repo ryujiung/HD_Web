@@ -10,7 +10,8 @@ const styles = [
   "스포티 / 애슬레저",
   "클래식 / 비즈니스",
   "페미닌",
-  "Logo",
+  "빈티지",
+  "젠더리스"
 ];
 
 export default function StepStyle({

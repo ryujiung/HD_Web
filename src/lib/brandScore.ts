@@ -44,7 +44,7 @@ export const brands: Brand[] = [
         신발: 1,
         "악세사리(주얼리,모자,선글라스)": 1,
       },
-      budget: { "중가 브랜드": 5 },
+      budget: { "MID": 5 },
     },
   },
   {
@@ -53,7 +53,7 @@ export const brands: Brand[] = [
       gender: { male: 3, female: 7 },
       style: { 캐주얼: 3, 미니멀: 7 },
       category: { 의류: 6, 가방: 3, 신발: 1 },
-      budget: { "중가 브랜드": 5 },
+      budget: { "MID": 5 },
     },
   },
   {
@@ -71,7 +71,7 @@ export const brands: Brand[] = [
         신발: 2,
         "악세사리(주얼리,모자,선글라스)": 1,
       },
-      budget: { "저가 브랜드": 5 },
+      budget: { "MID-LOW": 5 },
     },
   },
   {
@@ -88,7 +88,7 @@ export const brands: Brand[] = [
         신발: 3,
         "악세사리(주얼리,모자,선글라스)": 1,
       },
-      budget: { "저가 브랜드": 5 },
+      budget: { "MID-LOW": 5 },
     },
   },
   {
@@ -100,7 +100,7 @@ export const brands: Brand[] = [
         "악세사리(주얼리,모자,선글라스)": 5,
         시계: 2,
       },
-      budget: { "프리미엄 브랜드": 5 },
+      budget: { "MID-HIGH": 5 },
     },
   },
   {
@@ -108,7 +108,7 @@ export const brands: Brand[] = [
     scores: {
       gender: { male: 7, female: 3 },
       category: { 시계: 10 },
-      budget: { "명품 브랜드": 5 },
+      budget: { "HIGH": 5 },
     },
   },
   {
@@ -118,7 +118,7 @@ export const brands: Brand[] = [
       category: {
         "악세사리(주얼리,모자,선글라스)": 10,
       },
-      budget: { "프리미엄 브랜드": 5 },
+      budget: { "MID-HIGH": 5 },
     },
   },
   {
@@ -128,49 +128,51 @@ export const brands: Brand[] = [
       category: {
         "악세사리(주얼리,모자,선글라스)": 10,
       },
-      budget: { "저가 브랜드": 5 },
+      budget: { "MID-LOW": 5 },
     },
   },
 ];
 
-export function getTopBrand(answer: Answer) {
-  return brands
-    .map(brand => {
-      let score = 0;
+export function getTopBrands(answer: Answer) {
+  const results = brands.map(brand => {
+    let totalScore = 0;
 
-      /** ✅ 성별 */
-      if (answer.gender) {
-        score += brand.scores.gender?.[answer.gender] ?? 0;
-      }
+    /** 성별 */
+    if (answer.gender) {
+      totalScore += brand.scores.gender?.[answer.gender] ?? 0;
+    }
 
-      /** ✅ 스타일 (감쇠 누적 + 상한선) */
-      if (answer.styles && answer.styles.length > 0) {
-        let styleScore = 0;
+    /** 스타일 (감쇠 누적 + 상한선) */
+    if (answer.styles && answer.styles.length > 0) {
+      let styleScore = 0;
 
-        answer.styles.forEach((style, index) => {
-          const base = brand.scores.style?.[style] ?? 0;
+      answer.styles.forEach((style, index) => {
+        const base = brand.scores.style?.[style] ?? 0;
+        const weight = Math.pow(0.6, index);
+        styleScore += base * weight;
+      });
 
-          if (base > 0) {
-            const weight = Math.pow(0.6, index); // 1, 0.6, 0.36, ...
-            styleScore += base * weight;
-          }
-        });
+      totalScore += Math.min(styleScore, 10);
+    }
 
-        // 🔥 스타일 점수 상한 (예: 최대 10점)
-        score += Math.min(styleScore, 10);
-      }
+    /** 카테고리 */
+    if (answer.category) {
+      totalScore += brand.scores.category?.[answer.category] ?? 0;
+    }
 
-      /** ✅ 카테고리 */
-      if (answer.category) {
-        score += brand.scores.category?.[answer.category] ?? 0;
-      }
+    /** 예산 */
+    if (answer.budget) {
+      totalScore += brand.scores.budget?.[answer.budget] ?? 0;
+    }
 
-      /** ✅ 예산 */
-      if (answer.budget) {
-        score += brand.scores.budget?.[answer.budget] ?? 0;
-      }
+    return {
+      name: brand.name,
+      score: Math.round(totalScore),
+    };
+  });
 
-      return { name: brand.name, score };
-    })
-    .sort((a, b) => b.score - a.score)[0];
+  // 🔥 Top3 반환
+  return results
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
 }

@@ -56,7 +56,7 @@ export default function StepForm() {
       {step === 1 && <StepGender onSelect={v => next("gender", v)} />}
 
       {/* STEP 2 : 스타일 */}
-      {step === 2 && (
+      {step === 3 && (
         <>
           <StepStyle onNext={v => next("styles", v)} />
           <BackButton onClick={prev} />
@@ -64,7 +64,7 @@ export default function StepForm() {
       )}
 
       {/* STEP 3 : 예산 */}
-      {step === 3 && (
+      {step === 4 && (
         <>
           <StepBudget onSelect={v => next("budget", v)} />
           <BackButton onClick={prev} />
@@ -72,7 +72,7 @@ export default function StepForm() {
       )}
 
       {/* STEP 4 : 카테고리 */}
-      {step === 4 && (
+      {step === 2 && (
         <>
           <StepInterest onSelect={v => next("category", v)} />
           <BackButton onClick={prev} />
