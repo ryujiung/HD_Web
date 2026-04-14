@@ -1,7 +1,7 @@
 import OptionButton from "./OptionButton";
 
 const budgets = [
-  "MID-LOW ",
+  "MID-LOW(50만원 ~ )",
   "MID",
   "MID-HIGH",
   "HIGH",

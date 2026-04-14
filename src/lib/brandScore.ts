@@ -100,7 +100,7 @@ export const brands: Brand[] = [
         "악세사리(주얼리,모자,선글라스)": 5,
         시계: 2,
       },
-      budget: { "MID-HIGH": 5 },
+      budget: { "MID-HIGH": 10,"MID":5,"HIGH":5 },
     },
   },
   {
@@ -118,7 +118,7 @@ export const brands: Brand[] = [
       category: {
         "악세사리(주얼리,모자,선글라스)": 10,
       },
-      budget: { "MID-HIGH": 5 },
+      budget: { "HIGH": 10  },
     },
   },
   {
