@@ -41,7 +41,8 @@ export default function StepForm() {
         <div className="min-h-[60vh] flex flex-col justify-center items-center text-center space-y-6">
           <h1 className="text-3xl font-bold">AI Personal Shopper</h1>
           <p className="text-gray-600">
-            몇 가지 질문으로 당신에게 맞는 브랜드를 추천해드릴게요
+            간단한 질문에 답해주시면,
+            고객님께 가장 적합한 2F 브랜드를 큐레이션해드립니다.
           </p>
           <button
             onClick={() => setStep(1)}
