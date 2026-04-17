@@ -42,7 +42,7 @@ export default function StepForm() {
           <h1 className="text-3xl font-bold">AI Personal Shopper</h1>
           <p className="text-gray-600">
             간단한 질문에 답해주시면,<br />
-            고객님께 가장 적합한 2F 브랜드를 큐레이션해드립니다.
+            고객님께 가장 적합한 2F 브랜드를 추천해드립니다.
           </p>
           <button
             onClick={() => setStep(1)}
