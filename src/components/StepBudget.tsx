@@ -2,9 +2,9 @@ import OptionButton from "./OptionButton";
 
 const budgets = [
   "MID-LOW(~ 50만원)",
-  "MID",
-  "MID-HIGH",
-  "HIGH",
+  "MID(50만원 ~ 150만원)",
+  "MID-HIGH(150만원 ~ 300만원)",
+  "HIGH(300만원 이상)",
   "잘 모르겠어요",
 ];
 

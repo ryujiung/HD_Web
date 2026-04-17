@@ -9,8 +9,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "더현대 스타일 매장 추천",
-  description: "단계별 선택으로 맞춤 매장을 추천합니다.",
+  title: "더현대 서울 2F 브랜드 추천",
+  description: "단계별 선택으로 맞춤 브랜드를 추천합니다.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
