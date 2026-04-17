@@ -4,9 +4,9 @@ const categories = [
   "의류",
   "가방",
   "신발",
-  "악세사리(주얼리,모자,선글라스)"
+  "악세사리(주얼리,모자,선글라스)",
   "라이프스타일",
-  "시계"
+  "시계",
 ];
 
 export default function StepInterest({
