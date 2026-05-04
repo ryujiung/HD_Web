@@ -2,7 +2,7 @@
 
 export type Answer = {
   gender?: string;
-  styles?: string[]; // ✅ 복수
+  styles?: string[];
   category?: string;
   budget?: string;
 };
@@ -22,8 +22,8 @@ type Brand = {
   name: string;
   scores: {
     gender?: Record<string, number>;
-    style?: Record<string, number>;
-    category?: Record<string, number>;
+    styles?: Record<string, number>;
+    category?: Record<string, boolean>;
     budget?: Record<string, number>;
   };
 };
@@ -48,32 +48,59 @@ export const brands: Brand[] = [
     },
   },
   {
-    name: "르메르",
-    scores: {
-      gender: { male: 3, female: 7 },
-      style: { 캐주얼: 3, 미니멀: 7 },
-      category: { 의류: 6, 가방: 3, 신발: 1 },
-      budget: { "MID": 5 },
+  name: "르메르",
+  scores: {
+    gender: { male: 3, female: 7 },
+
+    styles: {
+      "클래식 / 비즈니스": 2,
+      페미닌: 1,
+      미니멀: 7,
+    },
+
+    category: {
+      의류: true,
+      가방: true,
+      신발: false,
+      "악세사리(주얼리,모자,선글라스)": true,
+      시계: false,
+      라이프스타일: false,
+    },
+
+    budget: {
+      "MID-HIGH": 10,
+      MID: 5,
+      HIGH: 5,
     },
   },
+}
   {
-    name: "알로",
+    name: "alo Yoga",
     scores: {
-      gender: { male: 7, female: 3 },
-      style: {
-        캐주얼: 3,
-        스트리트웨어: 2,
-        "스포티 / 애슬레저": 5,
+      gender: { male: 1, female: 9 },
+
+      styles: {
+        캐주얼: 2,
+        스트리트웨어: 1,
+        "스포티 / 애슬레저": 7,
       },
+
       category: {
-        의류: 6,
-        가방: 1,
-        신발: 2,
-        "악세사리(주얼리,모자,선글라스)": 1,
+        의류: true,
+        가방: false,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: true,
       },
-      budget: { "MID-LOW": 5 },
+
+      budget: {
+        "MID-LOW": 10,
+        MID: 5,
+      },
     },
   },
+];
   {
     name: "베이프",
     scores: {
