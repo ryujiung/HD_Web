@@ -7,17 +7,6 @@ export type Answer = {
   budget?: string;
 };
 
-type ScoreDetail = {
-  label: string;
-  value: number;
-};
-
-type BrandResult = {
-  name: string;
-  totalScore: number;
-  details: ScoreDetail[];
-};
-
 type Brand = {
   name: string;
   scores: {
@@ -28,63 +17,41 @@ type Brand = {
   };
 };
 
-
 export const brands: Brand[] = [
   {
-    name: "우영미",
+    name: "르메르",
     scores: {
-      gender: { male: 7, female: 3 },
-      style: {
-        캐주얼: 3,
-        미니멀: 6,
-        스트리트웨어: 1,
+      gender: { male: 3, female: 7 },
+      styles: {
+        "클래식 / 비즈니스": 2,
+        페미닌: 1,
+        미니멀: 7,
       },
       category: {
-        의류: 8,
-        신발: 1,
-        "악세사리(주얼리,모자,선글라스)": 1,
+        의류: true,
+        가방: true,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
       },
-      budget: { "MID": 5 },
+      budget: {
+        "MID-HIGH": 10,
+        MID: 5,
+        HIGH: 5,
+      },
     },
   },
-  {
-  name: "르메르",
-  scores: {
-    gender: { male: 3, female: 7 },
 
-    styles: {
-      "클래식 / 비즈니스": 2,
-      페미닌: 1,
-      미니멀: 7,
-    },
-
-    category: {
-      의류: true,
-      가방: true,
-      신발: false,
-      "악세사리(주얼리,모자,선글라스)": true,
-      시계: false,
-      라이프스타일: false,
-    },
-
-    budget: {
-      "MID-HIGH": 10,
-      MID: 5,
-      HIGH: 5,
-    },
-  },
-}
   {
     name: "alo Yoga",
     scores: {
       gender: { male: 1, female: 9 },
-
       styles: {
         캐주얼: 2,
         스트리트웨어: 1,
         "스포티 / 애슬레저": 7,
       },
-
       category: {
         의류: true,
         가방: false,
@@ -93,7 +60,150 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: true,
       },
+      budget: {
+        "MID-LOW": 10,
+        MID: 5,
+      },
+    },
+  },
 
+  {
+    name: "베이프",
+    scores: {
+      gender: { male: 4, female: 6 },
+      styles: {
+        스트리트웨어: 6,
+        빈티지: 4,
+      },
+      category: {
+        의류: true,
+        가방: false,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 10,
+        MID: 5,
+      },
+    },
+  },
+
+  {
+    name: "우영미",
+    scores: {
+      gender: { male: 7, female: 3 },
+      styles: {
+        젠더리스: 5,
+        캐주얼: 2,
+        미니멀: 2,
+        "비즈니스 / 클래식": 1,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        MID: 10,
+        "MID-LOW": 5,
+        "MID-HIGH": 5,
+      },
+    },
+  },
+
+  {
+    name: "몽블랑",
+    scores: {
+      gender: { male: 6, female: 4 },
+      styles: {
+        클래식: 8,
+        캐주얼: 2,
+      },
+      category: {
+        의류: false,
+        가방: true,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: true,
+        라이프스타일: true,
+      },
+      budget: {
+        MID: 5,
+        "MID-HIGH": 10,
+        HIGH: 5,
+      },
+    },
+  },
+
+  {
+    name: "TAG HEUER",
+    scores: {
+      gender: { male: 8, female: 2 },
+      styles: {
+        "클래식 / 비즈니스": 4,
+        스포츠: 6,
+      },
+      category: {
+        의류: false,
+        가방: false,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": false,
+        시계: true,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-HIGH": 5,
+        HIGH: 10,
+      },
+    },
+  },
+
+  {
+    name: "크롬하츠",
+    scores: {
+      gender: { male: 7, female: 3 },
+      styles: {
+        젠더리스: 5,
+        스트리트웨어: 5,
+      },
+      category: {
+        의류: false,
+        가방: false,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-HIGH": 5,
+        HIGH: 10,
+      },
+    },
+  },
+
+  {
+    name: "스와로브스키",
+    scores: {
+      gender: { male: 2, female: 8 },
+      styles: {
+        캐주얼: 2,
+        클래식: 4,
+        페미닌: 2,
+        젠더리스: 2,
+      },
+      category: {
+        의류: false,
+        가방: false,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
       budget: {
         "MID-LOW": 10,
         MID: 5,
@@ -101,80 +211,20 @@ export const brands: Brand[] = [
     },
   },
 ];
-  {
-    name: "베이프",
-    scores: {
-      gender: { male: 3, female: 7 },
-      style: {
-        캐주얼: 4,
-        스트리트웨어: 5,
-        "스포티 / 애슬레저": 1,
-      },
-      category: {
-        의류: 6,
-        신발: 3,
-        "악세사리(주얼리,모자,선글라스)": 1,
-      },
-      budget: { "MID-LOW": 5 },
-    },
-  },
-  {
-    name: "몽블랑",
-    scores: {
-      gender: { male: 8, female: 2 },
-      category: {
-        가방: 3,
-        "악세사리(주얼리,모자,선글라스)": 5,
-        시계: 2,
-      },
-      budget: { "MID-HIGH": 10,"MID": 5,"HIGH": 5 },
-    },
-  },
-  {
-    name: "태그호이어",
-    scores: {
-      gender: { male: 7, female: 3 },
-      category: { 시계: 10 },
-      budget: { "HIGH": 5 },
-    },
-  },
-  {
-    name: "크롬하츠 선글라스",
-    scores: {
-      gender: { male: 9, female: 1 },
-      category: {
-        "악세사리(주얼리,모자,선글라스)": 10,
-      },
-      budget: { "HIGH": 10  },
-    },
-  },
-  {
-    name: "스와로브스키",
-    scores: {
-      gender: { male: 1, female: 9 },
-      category: {
-        "악세사리(주얼리,모자,선글라스)": 10,
-      },
-      budget: { "MID-LOW": 5 },
-    },
-  },
-];
 
 export function getTopBrands(answer: Answer) {
-  const results = brands.map(brand => {
+  const results = brands.map((brand) => {
     let totalScore = 0;
 
-    /** 성별 */
     if (answer.gender) {
       totalScore += brand.scores.gender?.[answer.gender] ?? 0;
     }
 
-    /** 스타일 (감쇠 누적 + 상한선) */
     if (answer.styles && answer.styles.length > 0) {
       let styleScore = 0;
 
       answer.styles.forEach((style, index) => {
-        const base = brand.scores.style?.[style] ?? 0;
+        const base = brand.scores.styles?.[style] ?? 0;
         const weight = Math.pow(0.6, index);
         styleScore += base * weight;
       });
@@ -182,12 +232,10 @@ export function getTopBrands(answer: Answer) {
       totalScore += Math.min(styleScore, 10);
     }
 
-    /** 카테고리 */
     if (answer.category) {
-      totalScore += brand.scores.category?.[answer.category] ?? 0;
+      totalScore += brand.scores.category?.[answer.category] ? 5 : 0;
     }
 
-    /** 예산 */
     if (answer.budget) {
       totalScore += brand.scores.budget?.[answer.budget] ?? 0;
     }
@@ -198,8 +246,5 @@ export function getTopBrands(answer: Answer) {
     };
   });
 
-  // 🔥 Top3 반환
-  return results
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3);
+  return results.sort((a, b) => b.score - a.score).slice(0, 3);
 }
