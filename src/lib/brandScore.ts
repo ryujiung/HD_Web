@@ -322,6 +322,33 @@ export const brands: Brand[] = [
     },
   },
 },
+
+{
+  name: "코치",
+  scores: {
+    gender: { male: 2, female: 8 },
+
+    styles: {
+      캐주얼: 7,
+      미니멀: 3,
+    },
+
+    category: {
+      의류: true,
+      가방: true,
+      신발: false,
+      "악세사리(주얼리,모자,선글라스)": true,
+      시계: false,
+      라이프스타일: false,
+    },
+
+    budget: {
+      "MID-LOW": 5,
+      MID: 10,
+      "MID-HIGH": 5,
+    },
+  },
+},
 ];
 
 export function getTopBrands(answer: Answer) {
