@@ -280,7 +280,7 @@ export const brands: Brand[] = [
 
     category: {
       의류: true,
-      가방: true,
+      가방: false,
       신발: false,
       "악세사리(주얼리,모자,선글라스)": true,
       시계: false,
@@ -340,6 +340,63 @@ export const brands: Brand[] = [
       "악세사리(주얼리,모자,선글라스)": true,
       시계: false,
       라이프스타일: false,
+    },
+
+    budget: {
+      "MID-LOW": 5,
+      MID: 10,
+      "MID-HIGH": 5,
+    },
+  },
+},
+
+{
+  name: "옴므플리쎄",
+  scores: {
+    gender: { male: 8, female: 2 },
+
+    styles: {
+      캐주얼: 5,
+      미니멀: 4,
+      젠더리스: 1,
+    },
+
+    category: {
+      의류: true,
+      가방: true,
+      신발: false,
+      "악세사리(주얼리,모자,선글라스)": true,
+      시계: false,
+      라이프스타일: false,
+    },
+
+    budget: {
+      "MID-LOW": 5,
+      MID: 10,
+      "MID-HIGH": 5,
+    },
+  },
+},
+
+{
+  name: "언더커버",
+  scores: {
+    gender: { male: 4, female: 6 },
+
+    styles: {
+      스트리트웨어: 4,
+      젠더리스: 1,
+      빈티지: 2,
+      캐주얼: 3,
+    },
+
+    category: {
+      의류: true,
+      가방: true,
+      신발: true,
+      "악세사리(주얼리,모자,선글라스)": true,
+      시계: false,
+      라이프스타일: true,
     },
 
     budget: {
