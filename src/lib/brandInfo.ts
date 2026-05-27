@@ -62,4 +62,18 @@ export const brandInfo: Record<
 
 #미국 #스트리트럭셔리 #백로고후드`,
 },
+
+플리츠플리츠: {
+  image: "/image/PLEATS PLEASE.PNG",
+  description: `독창적인 플리츠 소재와 편안한 실루엣이 특징인 일본 디자이너 브랜드
+
+#이세이미야케 #먼슬리 #미스트`,
+},
+
+토템: {
+  image: "/image/TOTEME.PNG",
+  description: `북유럽 감성의 미니멀 디자인과 세련된 실루엣이 돋보이는 럭셔리 브랜드
+
+#스웨덴 #북유럽감성 #미니멀럭셔리`,
+},
 };

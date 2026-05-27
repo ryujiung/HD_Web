@@ -210,6 +210,118 @@ export const brands: Brand[] = [
       },
     },
   },
+
+  {
+  name: "타임 파리",
+  scores: {
+    gender: { male: 0, female: 10 },
+
+    styles: {
+      캐주얼: 3,
+      페미닌: 3,
+      "비즈니스 / 클래식": 4,
+    },
+
+    category: {
+      의류: true,
+      가방: true,
+      신발: true,
+      "악세사리(주얼리,모자,선글라스)": false,
+      시계: false,
+      라이프스타일: false,
+    },
+
+    budget: {
+      MID: 10,
+      "MID-LOW": 5,
+      "MID-HIGH": 5,
+    },
+  },
+},
+
+{
+  name: "피어오브갓",
+  scores: {
+    gender: { male: 8, female: 2 },
+
+    styles: {
+      캐주얼: 3,
+      스트리트웨어: 3,
+      젠더리스: 4,
+    },
+
+    category: {
+      의류: true,
+      가방: true,
+      신발: true,
+      "악세사리(주얼리,모자,선글라스)": true,
+      시계: false,
+      라이프스타일: false,
+    },
+
+    budget: {
+      MID: 5,
+      "MID-HIGH": 10,
+      HIGH: 5,
+    },
+  },
+},
+
+{
+  name: "플리츠 플리츠",
+  scores: {
+    gender: { male: 0, female: 10 },
+
+    styles: {
+      미니멀: 6,
+      캐주얼: 2,
+      페미닌: 2,
+    },
+
+    category: {
+      의류: true,
+      가방: true,
+      신발: false,
+      "악세사리(주얼리,모자,선글라스)": true,
+      시계: false,
+      라이프스타일: false,
+    },
+
+    budget: {
+      "MID-LOW": 5,
+      MID: 10,
+      "MID-HIGH": 5,
+    },
+  },
+},
+
+{
+  name: "토템",
+  scores: {
+    gender: { male: 0, female: 10 },
+
+    styles: {
+      미니멀: 5,
+      "클래식 / 비즈니스": 2,
+      페미닌: 3,
+    },
+
+    category: {
+      의류: true,
+      가방: true,
+      신발: true,
+      "악세사리(주얼리,모자,선글라스)": true,
+      시계: false,
+      라이프스타일: false,
+    },
+
+    budget: {
+      MID: 5,
+      "MID-HIGH": 10,
+      HIGH: 5,
+    },
+  },
+},
 ];
 
 export function getTopBrands(answer: Answer) {

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import OptionButton from "./OptionButton";
 
-const styles = [
+const styleOptions = [
   "캐주얼",
   "미니멀",
   "스트리트웨어",
@@ -36,7 +36,7 @@ export default function StepStyle({
       </h2>
 
       <div className="grid grid-cols-2 gap-4">
-        {styles.map(style => (
+        {styleOptions.map(style => (
           <OptionButton
             key={style}
             label={style}
@@ -45,7 +45,6 @@ export default function StepStyle({
           />
         ))}
 
-        {/* 상관없음 */}
         <OptionButton
           label="상관없음"
           active={selected.length === 0}
@@ -57,14 +56,7 @@ export default function StepStyle({
         onClick={() =>
           onNext(selected.length > 0 ? selected : undefined)
         }
-        className="
-          w-full py-2
-          border border-gray-700
-          rounded-lg
-          font-semibold
-          hover:bg-gray-100
-          transition
-        "
+        className="w-full py-2 border border-gray-700 rounded-lg font-semibold hover:bg-gray-100 transition"
       >
         다음
       </button>
