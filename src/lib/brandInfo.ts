@@ -36,7 +36,7 @@ export const brandInfo: Record<
       "몽블랑은 고급 필기구와 가죽 제품으로 유명한 프리미엄 브랜드입니다.",
   },
 
-  태그호이어: {
+  "TAG HEUER": {
     image: "/image/tagheuer.jpg",
     description:
       "태그호이어는 스포츠 감성의 스위스 럭셔리 시계 브랜드입니다.",

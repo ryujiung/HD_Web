@@ -212,7 +212,7 @@ export const brands: Brand[] = [
   },
 
   {
-  name: "타임 파리",
+  name: "타임파리",
   scores: {
     gender: { male: 0, female: 10 },
 
@@ -268,7 +268,7 @@ export const brands: Brand[] = [
 },
 
 {
-  name: "플리츠 플리츠",
+  name: "플리츠플리츠",
   scores: {
     gender: { male: 0, female: 10 },
 
