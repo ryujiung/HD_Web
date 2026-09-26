@@ -7,7 +7,6 @@ export default function StepGender({
 }) {
   return (
     <div className="space-y-6 py-4">
-
       <div>
         <p className="text-xs tracking-[0.2em] text-[#9A8662] mb-3">
           01
