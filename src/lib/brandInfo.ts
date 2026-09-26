@@ -78,7 +78,7 @@ export const brandInfo: Record<
 
   코치: {
     image: "/image/coach.png",
-    description: `뉴욕 헤리티지를 바탕으로 클래식과 트렌드를 결합한 모던 아메리칸 럭셔리 브랜드
+    description: `코치는 뉴욕 헤리티지를 바탕으로 클래식과 트렌드를 결합한 모던 아메리칸 럭셔리 브랜드입니다.
 
     #뉴욕헤리티지 #클래식아메리칸 #태비백`,
   },
@@ -87,7 +87,7 @@ export const brandInfo: Record<
     image: "/image/homme-plisse.jpg",
     description: `플리츠 소재와 실용적인 실루엣이 특징인 이세이미야케 남성 브랜드입니다.
 
-    #일본 #이세이미야케 #플리츠`,
+  #일본 #이세이미야케 #플리츠`,
   },
 
   언더커버: {
