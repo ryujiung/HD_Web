@@ -33,10 +33,10 @@ export default function Result({
             <img
               src={info.image}
               alt={topBrand.name}
-              className="w-full h-60 object-cover rounded-lg"
+              className="w-full h-48 object-contain rounded-lg"
             />
 
-            <p className="text-gray-600">
+            <p className="text-gray-600 whitespace-pre-line">
               {info.description}
             </p>
           </>
