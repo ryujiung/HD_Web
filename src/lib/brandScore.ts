@@ -98,7 +98,7 @@ export const brands: Brand[] = [
         젠더리스: 5,
         캐주얼: 2,
         미니멀: 2,
-        "비즈니스 / 클래식": 1,
+        "클래식 / 비즈니스": 1,
       },
       category: {
         의류: true,
@@ -121,7 +121,7 @@ export const brands: Brand[] = [
     scores: {
       gender: { male: 6, female: 4 },
       styles: {
-        클래식: 8,
+        "클래식 / 비즈니스": 8,
         캐주얼: 2,
       },
       category: {
@@ -146,7 +146,7 @@ export const brands: Brand[] = [
       gender: { male: 8, female: 2 },
       styles: {
         "클래식 / 비즈니스": 4,
-        스포츠: 6,
+        "스포티 / 애슬레저": 6,
       },
       category: {
         의류: false,
@@ -192,7 +192,7 @@ export const brands: Brand[] = [
       gender: { male: 2, female: 8 },
       styles: {
         캐주얼: 2,
-        클래식: 4,
+        "클래식 / 비즈니스": 4,
         페미닌: 2,
         젠더리스: 2,
       },
@@ -212,200 +212,179 @@ export const brands: Brand[] = [
   },
 
   {
-  name: "타임파리",
-  scores: {
-    gender: { male: 0, female: 10 },
-
-    styles: {
-      캐주얼: 3,
-      페미닌: 3,
-      "비즈니스 / 클래식": 4,
-    },
-
-    category: {
-      의류: true,
-      가방: true,
-      신발: true,
-      "악세사리(주얼리,모자,선글라스)": false,
-      시계: false,
-      라이프스타일: false,
-    },
-
-    budget: {
-      MID: 10,
-      "MID-LOW": 5,
-      "MID-HIGH": 5,
+    name: "타임파리",
+    scores: {
+      gender: { male: 0, female: 10 },
+      styles: {
+        캐주얼: 3,
+        페미닌: 3,
+        "클래식 / 비즈니스": 4,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": false,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        MID: 10,
+        "MID-LOW": 5,
+        "MID-HIGH": 5,
+      },
     },
   },
-},
 
-{
-  name: "피어오브갓",
-  scores: {
-    gender: { male: 8, female: 2 },
-
-    styles: {
-      캐주얼: 3,
-      스트리트웨어: 3,
-      젠더리스: 4,
-    },
-
-    category: {
-      의류: true,
-      가방: true,
-      신발: true,
-      "악세사리(주얼리,모자,선글라스)": true,
-      시계: false,
-      라이프스타일: false,
-    },
-
-    budget: {
-      MID: 5,
-      "MID-HIGH": 10,
-      HIGH: 5,
+  {
+    name: "피어오브갓",
+    scores: {
+      gender: { male: 8, female: 2 },
+      styles: {
+        캐주얼: 3,
+        스트리트웨어: 3,
+        젠더리스: 4,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        MID: 5,
+        "MID-HIGH": 10,
+        HIGH: 5,
+      },
     },
   },
-},
 
-{
-  name: "플리츠플리츠",
-  scores: {
-    gender: { male: 0, female: 10 },
-
-    styles: {
-      미니멀: 6,
-      캐주얼: 2,
-      페미닌: 2,
-    },
-
-    category: {
-      의류: true,
-      가방: false,
-      신발: false,
-      "악세사리(주얼리,모자,선글라스)": true,
-      시계: false,
-      라이프스타일: false,
-    },
-
-    budget: {
-      "MID-LOW": 5,
-      MID: 10,
-      "MID-HIGH": 5,
+  {
+    name: "플리츠플리츠",
+    scores: {
+      gender: { male: 0, female: 10 },
+      styles: {
+        미니멀: 6,
+        캐주얼: 2,
+        페미닌: 2,
+      },
+      category: {
+        의류: true,
+        가방: false,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
     },
   },
-},
 
-{
-  name: "토템",
-  scores: {
-    gender: { male: 0, female: 10 },
-
-    styles: {
-      미니멀: 5,
-      "클래식 / 비즈니스": 2,
-      페미닌: 3,
-    },
-
-    category: {
-      의류: true,
-      가방: true,
-      신발: true,
-      "악세사리(주얼리,모자,선글라스)": true,
-      시계: false,
-      라이프스타일: false,
-    },
-
-    budget: {
-      MID: 5,
-      "MID-HIGH": 10,
-      HIGH: 5,
+  {
+    name: "토템",
+    scores: {
+      gender: { male: 0, female: 10 },
+      styles: {
+        미니멀: 5,
+        "클래식 / 비즈니스": 2,
+        페미닌: 3,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        MID: 5,
+        "MID-HIGH": 10,
+        HIGH: 5,
+      },
     },
   },
-},
 
-{
-  name: "코치",
-  scores: {
-    gender: { male: 2, female: 8 },
-
-    styles: {
-      캐주얼: 7,
-      미니멀: 3,
-    },
-
-    category: {
-      의류: true,
-      가방: true,
-      신발: false,
-      "악세사리(주얼리,모자,선글라스)": true,
-      시계: false,
-      라이프스타일: false,
-    },
-
-    budget: {
-      "MID-LOW": 5,
-      MID: 10,
-      "MID-HIGH": 5,
+  {
+    name: "코치",
+    scores: {
+      gender: { male: 2, female: 8 },
+      styles: {
+        캐주얼: 7,
+        미니멀: 3,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
     },
   },
-},
 
-{
-  name: "옴므플리쎄",
-  scores: {
-    gender: { male: 8, female: 2 },
-
-    styles: {
-      캐주얼: 5,
-      미니멀: 4,
-      젠더리스: 1,
-    },
-
-    category: {
-      의류: true,
-      가방: true,
-      신발: false,
-      "악세사리(주얼리,모자,선글라스)": true,
-      시계: false,
-      라이프스타일: false,
-    },
-
-    budget: {
-      "MID-LOW": 5,
-      MID: 10,
-      "MID-HIGH": 5,
+  {
+    name: "옴므플리쎄",
+    scores: {
+      gender: { male: 8, female: 2 },
+      styles: {
+        캐주얼: 5,
+        미니멀: 4,
+        젠더리스: 1,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
     },
   },
-},
 
-{
-  name: "언더커버",
-  scores: {
-    gender: { male: 4, female: 6 },
-
-    styles: {
-      스트리트웨어: 4,
-      젠더리스: 1,
-      빈티지: 2,
-      캐주얼: 3,
-    },
-
-    category: {
-      의류: true,
-      가방: true,
-      신발: true,
-      "악세사리(주얼리,모자,선글라스)": true,
-      시계: false,
-      라이프스타일: true,
-    },
-
-    budget: {
-      "MID-LOW": 5,
-      MID: 10,
-      "MID-HIGH": 5,
+  {
+    name: "언더커버",
+    scores: {
+      gender: { male: 4, female: 6 },
+      styles: {
+        스트리트웨어: 4,
+        젠더리스: 1,
+        빈티지: 2,
+        캐주얼: 3,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: true,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
     },
   },
-},
 ];
 
 export function getTopBrands(answer: Answer) {
@@ -442,5 +421,7 @@ export function getTopBrands(answer: Answer) {
     };
   });
 
-  return results.sort((a, b) => b.score - a.score).slice(0, 3);
+  return results
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
 }
