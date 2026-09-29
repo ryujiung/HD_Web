@@ -164,12 +164,12 @@ export const brands: Brand[] = [
   },
 
   {
-    name: "크롬하츠",
+    name: "크롬하츠선글라스",
     scores: {
-      gender: { male: 7, female: 3 },
+      gender: { male: 3, female: 3 },
       styles: {
-        젠더리스: 5,
         스트리트웨어: 5,
+        젠더리스: 5,
       },
       category: {
         의류: false,
@@ -189,20 +189,19 @@ export const brands: Brand[] = [
   {
     name: "스와로브스키",
     scores: {
-      gender: { male: 2, female: 8 },
+      gender: { male: 0, female: 10 },
       styles: {
         캐주얼: 2,
+        페미닌: 4,
         "클래식 / 비즈니스": 4,
-        페미닌: 2,
-        젠더리스: 2,
       },
       category: {
         의류: false,
         가방: false,
         신발: false,
         "악세사리(주얼리,모자,선글라스)": true,
-        시계: false,
-        라이프스타일: false,
+        시계: true,
+        라이프스타일: true,
       },
       budget: {
         "MID-LOW": 10,
@@ -435,32 +434,302 @@ export const brands: Brand[] = [
       },
     },
   },
+
+  {
+    name: "아미",
+    scores: {
+      gender: { male: 5, female: 5 },
+      styles: {
+        젠더리스: 4,
+        캐주얼: 3,
+        "클래식 / 비즈니스": 3,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
+    },
+  },
+
+  {
+    name: "아더에러",
+    scores: {
+      gender: { male: 5, female: 5 },
+      styles: {
+        캐주얼: 7,
+        미니멀: 3,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: true,
+      },
+      budget: {
+        "MID-LOW": 10,
+        MID: 5,
+      },
+    },
+  },
+
+  {
+    name: "스톤아일랜드",
+    scores: {
+      gender: { male: 7, female: 3 },
+      styles: {
+        캐주얼: 4,
+        "스포티 / 애슬레저": 3,
+        스트리트웨어: 3,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        MID: 5,
+        "MID-HIGH": 10,
+        HIGH: 5,
+      },
+    },
+  },
+
+  {
+    name: "막스마라",
+    scores: {
+      gender: { male: 0, female: 10 },
+      styles: {
+        "클래식 / 비즈니스": 4,
+        미니멀: 3,
+        페미닌: 4,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        MID: 5,
+        "MID-HIGH": 10,
+        HIGH: 5,
+      },
+    },
+  },
+
+  {
+    name: "랑방컬렉션",
+    scores: {
+      gender: { male: 0, female: 10 },
+      styles: {
+        "클래식 / 비즈니스": 3,
+        페미닌: 7,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
+    },
+  },
+
+  {
+    name: "Y-3",
+    scores: {
+      gender: { male: 6, female: 4 },
+      styles: {
+        캐주얼: 3,
+        스트리트웨어: 5,
+        젠더리스: 2,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 10,
+        MID: 5,
+      },
+    },
+  },
+
+  {
+    name: "R13",
+    scores: {
+      gender: { male: 3, female: 7 },
+      styles: {
+        캐주얼: 4,
+        스트리트웨어: 3,
+        젠더리스: 3,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
+    },
+  },
+
+  {
+    name: "헬렌카민스키",
+    scores: {
+      gender: { male: 0, female: 10 },
+      styles: {
+        페미닌: 5,
+        캐주얼: 5,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+      },
+    },
+  },
+
+  {
+    name: "롱샴",
+    scores: {
+      gender: { male: 1, female: 9 },
+      styles: {
+        "클래식 / 비즈니스": 4,
+        "스포티 / 애슬레저": 3,
+        캐주얼: 3,
+      },
+      category: {
+        의류: false,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 10,
+        MID: 5,
+      },
+    },
+  },
+
+  {
+    name: "바오바오",
+    scores: {
+      gender: { male: 1, female: 9 },
+      styles: {
+        "클래식 / 비즈니스": 6,
+        미니멀: 4,
+      },
+      category: {
+        의류: false,
+        가방: true,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": false,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
+    },
+  },
+
+  {
+    name: "투미",
+    scores: {
+      gender: { male: 6, female: 4 },
+      styles: {
+        "클래식 / 비즈니스": 8,
+        젠더리스: 2,
+      },
+      category: {
+        의류: false,
+        가방: true,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": false,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
+    },
+  },
 ];
 
 export function getTopBrands(answer: Answer) {
   const results = brands.map((brand) => {
     let totalScore = 0;
 
+    // 성별 점수
     if (answer.gender) {
       totalScore += brand.scores.gender?.[answer.gender] ?? 0;
     }
 
-    if (answer.styles && answer.styles.length > 0) {
-      let styleScore = 0;
+    // 스타일 점수
+    // 선택 순서와 관계없이 모든 선택 스타일을 동일하게 반영
+    // 스타일 총점은 최대 10점
+if (answer.styles && answer.styles.length > 0) {
+  let styleScore = 0;
 
-      answer.styles.forEach((style, index) => {
-        const base = brand.scores.styles?.[style] ?? 0;
-        const weight = Math.pow(0.6, index);
-        styleScore += base * weight;
-      });
+  answer.styles.forEach((style) => {
+    styleScore += brand.scores.styles?.[style] ?? 0;
+  });
 
-      totalScore += Math.min(styleScore, 10);
-    }
+  totalScore += Math.min(styleScore, 10);
+}
 
+    // 카테고리 점수
     if (answer.category) {
       totalScore += brand.scores.category?.[answer.category] ? 5 : 0;
     }
 
+    // 가격대 점수
     if (answer.budget) {
       totalScore += brand.scores.budget?.[answer.budget] ?? 0;
     }
