@@ -66,45 +66,24 @@ export default function StepStyle({
   };
 
   return (
-    <div className="py-3">
+    <div className="py-2">
 
       {/* STEP */}
-      <div className="flex items-center gap-3 mb-7">
-        <span
-          className="
-            text-[11px]
-            font-semibold
-            tracking-[0.18em]
-            text-[#4A675C]
-          "
-        >
+      <div className="flex items-center gap-3 mb-5">
+        <span className="text-[11px] font-semibold tracking-[0.18em] text-[#4A675C]">
           03
         </span>
 
         <span className="w-7 h-px bg-[#CBD5D0]" />
 
-        <span
-          className="
-            text-[9px]
-            tracking-[0.22em]
-            text-[#969C98]
-          "
-        >
+        <span className="text-[9px] tracking-[0.22em] text-[#969C98]">
           STYLE
         </span>
       </div>
 
       {/* QUESTION */}
-      <div className="mb-8">
-        <h2
-          className="
-            text-[27px]
-            leading-[1.35]
-            font-semibold
-            tracking-[-0.035em]
-            text-[#1D211F]
-          "
-        >
+      <div className="mb-6">
+        <h2 className="text-[27px] leading-[1.35] font-semibold tracking-[-0.035em] text-[#1D211F]">
           {isKorean ? (
             <>
               어떤 스타일을
@@ -120,14 +99,7 @@ export default function StepStyle({
           )}
         </h2>
 
-        <p
-          className="
-            text-[14px]
-            leading-6
-            text-[#7D837F]
-            mt-4
-          "
-        >
+        <p className="text-[13px] leading-6 text-[#7D837F] mt-3">
           {isKorean
             ? "취향에 맞는 스타일을 자유롭게 선택해주세요."
             : "Select all the styles that match your taste."}
@@ -153,7 +125,7 @@ export default function StepStyle({
       </div>
 
       {/* SELECTION INFO */}
-      <div className="flex items-center justify-between mt-5 px-1">
+      <div className="flex items-center justify-between mt-4 px-1">
         <span className="text-[10px] tracking-[0.06em] text-[#9A9F9C]">
           {isKorean ? "복수 선택 가능" : "MULTIPLE SELECTION"}
         </span>
@@ -175,8 +147,8 @@ export default function StepStyle({
         }
         className="
           w-full
-          mt-6
-          py-[17px]
+          mt-5
+          py-[15px]
           bg-[#4A675C]
           text-white
           rounded-xl
@@ -186,7 +158,7 @@ export default function StepStyle({
           transition-all duration-200
           hover:bg-[#3F594F]
           active:scale-[0.99]
-          shadow-[0_8px_24px_rgba(74,103,92,0.16)]
+          shadow-[0_6px_18px_rgba(74,103,92,0.12)]
         "
       >
         {isKorean ? "다음 →" : "NEXT →"}

@@ -17,12 +17,12 @@ export default function OptionButton({
       onClick={onClick}
       className={`
         relative
-        min-h-[58px]
-        px-4 py-4
-        rounded-[12px]
+        min-h-[52px]
+        px-4 py-3
+        rounded-[11px]
         border
         text-[13px]
-        leading-[1.4]
+        leading-[1.35]
         font-medium
         tracking-[-0.01em]
         text-left
@@ -36,7 +36,7 @@ export default function OptionButton({
               bg-[#4A675C]
               border-[#4A675C]
               text-white
-              shadow-[0_6px_18px_rgba(74,103,92,0.14)]
+              shadow-[0_5px_14px_rgba(74,103,92,0.12)]
             `
             : `
               bg-white
@@ -56,12 +56,12 @@ export default function OptionButton({
           <span
             className="
               flex-shrink-0
-              w-[18px] h-[18px]
+              w-[17px] h-[17px]
               rounded-full
               border border-white/50
               bg-white/10
               flex items-center justify-center
-              text-[9px]
+              text-[8px]
               leading-none
             "
           >

@@ -39,10 +39,10 @@ export default function StepForm() {
   const isKorean = language === "ko";
 
   return (
-    <div className="space-y-6 text-[#1D211F]">
+    <div className="space-y-4 text-[#1D211F]">
 
       {/* KR / EN */}
-      <div className="flex justify-end pt-2">
+      <div className="flex justify-end pt-1">
         <div
           className="
             inline-flex items-center
@@ -56,8 +56,8 @@ export default function StepForm() {
             type="button"
             onClick={() => setLanguage("ko")}
             className={`
-              min-w-[42px]
-              px-3 py-2
+              min-w-[40px]
+              px-3 py-[7px]
               rounded-full
               text-[10px]
               tracking-[0.12em]
@@ -77,8 +77,8 @@ export default function StepForm() {
             type="button"
             onClick={() => setLanguage("en")}
             className={`
-              min-w-[42px]
-              px-3 py-2
+              min-w-[40px]
+              px-3 py-[7px]
               rounded-full
               text-[10px]
               tracking-[0.12em]
@@ -98,10 +98,10 @@ export default function StepForm() {
 
       {/* STEP 0 : MAIN */}
       {step === 0 && (
-        <div className="min-h-[60vh] flex flex-col justify-center">
+        <div className="min-h-[52vh] flex flex-col justify-center">
 
           {/* SERVICE LABEL */}
-          <div className="flex items-center gap-3 mb-7">
+          <div className="flex items-center gap-3 mb-5">
             <span className="w-8 h-px bg-[#4A675C]" />
 
             <p
@@ -119,8 +119,8 @@ export default function StepForm() {
           {/* TITLE */}
           <h1
             className="
-              text-[33px]
-              sm:text-[35px]
+              text-[31px]
+              sm:text-[34px]
               leading-[1.25]
               font-semibold
               tracking-[-0.04em]
@@ -145,75 +145,26 @@ export default function StepForm() {
           {/* DESCRIPTION */}
           <p
             className="
-              text-[14px]
-              leading-7
+              text-[13px]
+              leading-6
               text-[#777D79]
-              mt-6
+              mt-5
             "
           >
             {isKorean ? (
               <>
-                몇 가지 간단한 질문을 통해
+                몇 가지 간단한 질문을 통해 고객님의 취향과
                 <br />
-                고객님의 취향과 쇼핑 목적에 어울리는
-                <br />
-                2F 브랜드를 추천해드립니다.
+                쇼핑 목적에 어울리는 2F 브랜드를 추천해드립니다.
               </>
             ) : (
               <>
-                Answer a few simple questions
+                Answer a few simple questions to discover
                 <br />
-                to discover the 2F brands that best match
-                <br />
-                your style and shopping preferences.
+                the 2F brands that best match your preferences.
               </>
             )}
           </p>
-
-          {/* LILAC INFO CARD */}
-          <div
-            className="
-              mt-8
-              px-5 py-4
-              bg-[#F0E4ED]/60
-              border border-[#EADDE6]
-              rounded-2xl
-            "
-          >
-            <div className="flex items-center gap-3">
-
-              <div
-                className="
-                  flex items-center justify-center
-                  w-8 h-8
-                  rounded-full
-                  bg-white/70
-                "
-              >
-                <span className="w-[6px] h-[6px] rounded-full bg-[#4A675C]" />
-              </div>
-
-              <div>
-                <p
-                  className="
-                    text-[9px]
-                    tracking-[0.18em]
-                    text-[#4A675C]
-                    font-semibold
-                  "
-                >
-                  PERSONALIZED CURATION
-                </p>
-
-                <p className="text-[11px] text-[#777274] mt-1">
-                  {isKorean
-                    ? "취향 · 스타일 · 관심 카테고리를 기반으로 추천합니다."
-                    : "Curated around your style, interests and preferences."}
-                </p>
-              </div>
-
-            </div>
-          </div>
 
           {/* START BUTTON */}
           <button
@@ -221,8 +172,8 @@ export default function StepForm() {
             onClick={() => setStep(1)}
             className="
               w-full
-              mt-9
-              py-[17px]
+              mt-7
+              py-[16px]
               bg-[#4A675C]
               text-white
               rounded-xl
@@ -232,32 +183,28 @@ export default function StepForm() {
               transition-all duration-200
               hover:bg-[#3F594F]
               active:scale-[0.99]
-              shadow-[0_8px_24px_rgba(74,103,92,0.16)]
+              shadow-[0_8px_24px_rgba(74,103,92,0.14)]
             "
           >
             {isKorean ? "시작하기 →" : "GET STARTED →"}
           </button>
 
-          {/* BOTTOM TEXT */}
-          <div className="flex items-center justify-center gap-3 mt-7">
-            <span className="w-5 h-px bg-[#D5D8D6]" />
-
-            <p
-              className="
-                text-[8px]
-                tracking-[0.22em]
-                text-[#A0A5A2]
-              "
-            >
-              2F · MODERN MOOD
-            </p>
-
-            <span className="w-5 h-px bg-[#D5D8D6]" />
-          </div>
+          {/* BOTTOM */}
+          <p
+            className="
+              text-center
+              text-[8px]
+              tracking-[0.22em]
+              text-[#A0A5A2]
+              mt-5
+            "
+          >
+            2F · MODERN MOOD
+          </p>
         </div>
       )}
 
-      {/* STEP 1 : 성별 */}
+      {/* STEP 1 */}
       {step === 1 && (
         <StepGender
           onSelect={(v) => next("gender", v)}
@@ -265,7 +212,7 @@ export default function StepForm() {
         />
       )}
 
-      {/* STEP 2 : 카테고리 */}
+      {/* STEP 2 */}
       {step === 2 && (
         <>
           <StepInterest
@@ -273,14 +220,11 @@ export default function StepForm() {
             language={language}
           />
 
-          <BackButton
-            onClick={prev}
-            language={language}
-          />
+          <BackButton onClick={prev} language={language} />
         </>
       )}
 
-      {/* STEP 3 : 스타일 */}
+      {/* STEP 3 */}
       {step === 3 && (
         <>
           <StepStyle
@@ -288,14 +232,11 @@ export default function StepForm() {
             language={language}
           />
 
-          <BackButton
-            onClick={prev}
-            language={language}
-          />
+          <BackButton onClick={prev} language={language} />
         </>
       )}
 
-      {/* STEP 4 : 예산 / 워치 등급 */}
+      {/* STEP 4 */}
       {step === 4 && (
         <>
           <StepBudget
@@ -304,14 +245,11 @@ export default function StepForm() {
             category={answers.category}
           />
 
-          <BackButton
-            onClick={prev}
-            language={language}
-          />
+          <BackButton onClick={prev} language={language} />
         </>
       )}
 
-      {/* STEP 5 : 결과 */}
+      {/* STEP 5 */}
       {step === 5 && (
         <Result
           answer={answers}
@@ -336,7 +274,7 @@ function BackButton({
       onClick={onClick}
       className="
         w-full
-        py-3
+        py-[11px]
         text-[12px]
         text-[#7D837F]
         border border-[#E2E5E3]

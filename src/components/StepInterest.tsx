@@ -4,36 +4,16 @@ import OptionButton from "./OptionButton";
 import { Language } from "./StepForm";
 
 const categoryOptions = [
-  {
-    value: "의류",
-    ko: "의류",
-    en: "Clothing",
-  },
-  {
-    value: "가방",
-    ko: "가방",
-    en: "Bags",
-  },
-  {
-    value: "신발",
-    ko: "신발",
-    en: "Shoes",
-  },
+  { value: "의류", ko: "의류", en: "Clothing" },
+  { value: "가방", ko: "가방", en: "Bags" },
+  { value: "신발", ko: "신발", en: "Shoes" },
   {
     value: "악세사리(주얼리,모자,선글라스)",
     ko: "액세서리",
     en: "Accessories",
   },
-  {
-    value: "시계",
-    ko: "시계",
-    en: "Watches",
-  },
-  {
-    value: "라이프스타일",
-    ko: "라이프스타일",
-    en: "Lifestyle",
-  },
+  { value: "시계", ko: "시계", en: "Watches" },
+  { value: "라이프스타일", ko: "라이프스타일", en: "Lifestyle" },
 ];
 
 export default function StepInterest({
@@ -46,45 +26,23 @@ export default function StepInterest({
   const isKorean = language === "ko";
 
   return (
-    <div className="py-3">
-
+    <div className="py-2">
       {/* STEP */}
-      <div className="flex items-center gap-3 mb-7">
-        <span
-          className="
-            text-[11px]
-            font-semibold
-            tracking-[0.18em]
-            text-[#4A675C]
-          "
-        >
+      <div className="flex items-center gap-3 mb-5">
+        <span className="text-[11px] font-semibold tracking-[0.18em] text-[#4A675C]">
           02
         </span>
 
         <span className="w-7 h-px bg-[#CBD5D0]" />
 
-        <span
-          className="
-            text-[9px]
-            tracking-[0.22em]
-            text-[#969C98]
-          "
-        >
+        <span className="text-[9px] tracking-[0.22em] text-[#969C98]">
           CATEGORY
         </span>
       </div>
 
       {/* QUESTION */}
-      <div className="mb-8">
-        <h2
-          className="
-            text-[27px]
-            leading-[1.35]
-            font-semibold
-            tracking-[-0.035em]
-            text-[#1D211F]
-          "
-        >
+      <div className="mb-6">
+        <h2 className="text-[27px] leading-[1.35] font-semibold tracking-[-0.035em] text-[#1D211F]">
           {isKorean ? (
             <>
               무엇을
@@ -100,14 +58,7 @@ export default function StepInterest({
           )}
         </h2>
 
-        <p
-          className="
-            text-[14px]
-            leading-6
-            text-[#7D837F]
-            mt-4
-          "
-        >
+        <p className="text-[13px] leading-6 text-[#7D837F] mt-3">
           {isKorean
             ? "가장 관심 있는 상품군을 선택해주세요."
             : "Select the category you're most interested in."}
@@ -128,15 +79,6 @@ export default function StepInterest({
           label={isKorean ? "상관없음" : "No Preference"}
           onClick={() => onSelect(undefined)}
         />
-      </div>
-
-      {/* SUBTLE ACCENT */}
-      <div className="mt-8 flex items-center gap-3">
-        <div className="h-px flex-1 bg-[#ECE9EA]" />
-
-        <div className="w-[5px] h-[5px] rounded-full bg-[#F0E4ED]" />
-
-        <div className="h-px flex-1 bg-[#ECE9EA]" />
       </div>
     </div>
   );

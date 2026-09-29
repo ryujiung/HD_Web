@@ -13,45 +13,23 @@ export default function StepGender({
   const isKorean = language === "ko";
 
   return (
-    <div className="py-3">
-
+    <div className="py-2">
       {/* STEP */}
-      <div className="flex items-center gap-3 mb-7">
-        <span
-          className="
-            text-[11px]
-            font-semibold
-            tracking-[0.18em]
-            text-[#4A675C]
-          "
-        >
+      <div className="flex items-center gap-3 mb-5">
+        <span className="text-[11px] font-semibold tracking-[0.18em] text-[#4A675C]">
           01
         </span>
 
         <span className="w-7 h-px bg-[#CBD5D0]" />
 
-        <span
-          className="
-            text-[9px]
-            tracking-[0.22em]
-            text-[#969C98]
-          "
-        >
+        <span className="text-[9px] tracking-[0.22em] text-[#969C98]">
           GENDER
         </span>
       </div>
 
       {/* QUESTION */}
-      <div className="mb-8">
-        <h2
-          className="
-            text-[27px]
-            leading-[1.35]
-            font-semibold
-            tracking-[-0.035em]
-            text-[#1D211F]
-          "
-        >
+      <div className="mb-6">
+        <h2 className="text-[27px] leading-[1.35] font-semibold tracking-[-0.035em] text-[#1D211F]">
           {isKorean ? (
             <>
               성별을
@@ -67,14 +45,7 @@ export default function StepGender({
           )}
         </h2>
 
-        <p
-          className="
-            text-[14px]
-            leading-6
-            text-[#7D837F]
-            mt-4
-          "
-        >
+        <p className="text-[13px] leading-6 text-[#7D837F] mt-3">
           {isKorean
             ? "더 정확한 브랜드 추천을 위해 선택해주세요."
             : "This helps us personalize your brand recommendations."}
@@ -102,15 +73,6 @@ export default function StepGender({
           label={isKorean ? "밝히지 않음" : "Prefer not to say"}
           onClick={() => onSelect(undefined)}
         />
-      </div>
-
-      {/* SUBTLE ACCENT */}
-      <div className="mt-8 flex items-center gap-3">
-        <div className="h-px flex-1 bg-[#ECE9EA]" />
-
-        <div className="w-[5px] h-[5px] rounded-full bg-[#F0E4ED]" />
-
-        <div className="h-px flex-1 bg-[#ECE9EA]" />
       </div>
     </div>
   );
