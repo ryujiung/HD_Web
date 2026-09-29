@@ -1,112 +1,345 @@
-export const brandInfo: Record<
-  string,
-  { image: string; description: string }
-> = {
+type BrandInfo = {
+  image: string | null;
+  description: {
+    ko: string;
+    en: string;
+  };
+};
+
+export const brandInfo: Record<string, BrandInfo> = {
   우영미: {
     image: "/image/wooyoungmi.jpg",
-    description: `우영미는 파리 감성의 컨템포러리 테일러링을 기반으로 한 젠더리스 럭셔리 캐주얼 브랜드입니다.
+    description: {
+      ko: `우영미는 파리 감성의 컨템포러리 테일러링을 기반으로 한 젠더리스 럭셔리 캐주얼 브랜드입니다.
 
 #WOOYOUNGMI #프렌치무드`,
+      en: `WOOYOUNGMI is a genderless luxury fashion brand known for contemporary tailoring inspired by Parisian sensibilities.
+
+#WOOYOUNGMI #FrenchMood`,
+    },
   },
 
   르메르: {
     image: "/image/lemaire.png",
-    description:
-      "르메르는 편안하면서도 세련된 미니멀 스타일로 유명한 프랑스 브랜드입니다.",
+    description: {
+      ko: `르메르는 편안하면서도 세련된 미니멀 스타일로 유명한 프랑스 브랜드입니다.
+
+#프랑스 #미니멀 #파리지앵`,
+      en: `LEMAIRE is a French fashion brand known for its refined minimalism and relaxed, sophisticated style.
+
+#France #Minimal #Parisian`,
+    },
   },
 
   "alo Yoga": {
     image: "/image/alo-yoga-logo.png",
-    description: `alo Yoga는 세련된 미학과 퍼포먼스를 결합해 모던 럭셔리 라이프스타일을 제안하는 프리미엄 액티브웨어 브랜드입니다.
+    description: {
+      ko: `alo Yoga는 세련된 미학과 퍼포먼스를 결합해 모던 럭셔리 라이프스타일을 제안하는 프리미엄 액티브웨어 브랜드입니다.
 
 #미국 #하이엔드애슬레저 #웰니스`,
+      en: `Alo Yoga is a premium activewear brand that combines refined aesthetics and performance to offer a modern luxury lifestyle.
+
+#USA #HighEndAthleisure #Wellness`,
+    },
   },
 
   베이프: {
     image: "/image/bape.png",
-    description: `베이프는 1993년 니고가 설립한 베이프는 힙합·우라하라 감성의 대표 스트리트 브랜드입니다.
+    description: {
+      ko: `베이프는 1993년 니고가 설립한 힙합·우라하라 감성의 대표 스트리트 브랜드입니다.
 
 #일본 #카모플라쥬 #콜라보`,
+      en: `Founded by NIGO in 1993, BAPE is an iconic Japanese streetwear brand rooted in hip-hop and Ura-Harajuku culture.
+
+#Japan #Camouflage #Collaboration`,
+    },
   },
 
   몽블랑: {
     image: "/image/montblanc.jpg",
-    description:
-      "몽블랑은 고급 필기구와 가죽 제품으로 유명한 프리미엄 브랜드입니다.",
+    description: {
+      ko: `몽블랑은 고급 필기구와 가죽 제품으로 유명한 프리미엄 브랜드입니다.
+
+#독일 #필기구 #레더`,
+      en: `Montblanc is a premium brand renowned for luxury writing instruments, leather goods, watches, and accessories.
+
+#Germany #WritingInstruments #Leather`,
+    },
   },
 
   "TAG HEUER": {
     image: "/image/tagheuer.jpg",
-    description:
-      "태그호이어는 스포츠 감성의 스위스 럭셔리 시계 브랜드입니다.",
+    description: {
+      ko: `태그호이어는 스포츠 감성의 스위스 럭셔리 시계 브랜드입니다.
+
+#스위스 #럭셔리워치 #스포츠`,
+      en: `TAG Heuer is a Swiss luxury watch brand known for its strong connection to sports, performance, and precision.
+
+#Switzerland #LuxuryWatch #Sports`,
+    },
+  },
+
+  크롬하츠선글라스: {
+    image: null,
+    description: {
+      ko: `925 실버 장식과 록시크 무드를 바탕으로 독창적인 디자인을 선보이는 럭셔리 아이웨어 브랜드입니다.
+
+#미국 #DUCKBUTTER #럭셔리아이웨어`,
+      en: `Chrome Hearts Eyewear is a luxury eyewear brand known for its distinctive designs, combining 925 sterling silver details with a rock-chic aesthetic.
+
+#USA #DUCKBUTTER #LuxuryEyewear`,
+    },
   },
 
   스와로브스키: {
-    image: "/image/swarovski.jpg",
-    description:
-      "스와로브스키는 크리스탈 액세서리로 유명한 브랜드입니다.",
+    image: "/image/SWAROVSKI.jpg",
+    description: {
+      ko: `정교한 크리스털 기술로 빛의 아름다움을 완성하여 일상의 순간을 특별하게 만드는 크리스털 주얼리 브랜드입니다.
+
+#오스트리아 #스완 #랩다이아`,
+      en: `Swarovski is a crystal jewelry brand that brings the beauty of light to life through sophisticated crystal-cutting techniques, making everyday moments special.
+
+#Austria #Swan #LabGrownDiamond`,
+    },
   },
 
   타임파리: {
     image: "/image/time-paris.png",
-    description: `타임 파리는 글로벌 시장을 겨냥한 타임의 컬렉션 브랜드로, 매 시즌 파리 패션 위크에 참가해 차별화된 컬렉션을 선보이고 있습니다.
+    description: {
+      ko: `타임 파리는 글로벌 시장을 겨냥한 타임의 컬렉션 브랜드로, 매 시즌 파리 패션 위크에 참가해 차별화된 컬렉션을 선보이고 있습니다.
 
 #컬렉션룩 #셋업 #쇼피스`,
+      en: `TIME PARIS is a collection-focused label created for the global market, presenting distinctive collections each season during Paris Fashion Week.
+
+#CollectionLook #SetUp #Showpiece`,
+    },
   },
 
   피어오브갓: {
     image: "/image/fear-of-god.png",
-    description: `피어오브갓은 스트리트 감성과 미니멀 실루엣이 돋보이는 미국 럭셔리 브랜드입니다.
+    description: {
+      ko: `피어오브갓은 스트리트 감성과 미니멀 실루엣이 돋보이는 미국 럭셔리 브랜드입니다.
 
 #미국 #스트리트럭셔리 #백로고후드`,
+      en: `Fear of God is an American luxury fashion brand known for combining streetwear influences with refined, minimalist silhouettes.
+
+#USA #StreetLuxury #LogoHoodie`,
+    },
   },
 
   플리츠플리츠: {
     image: "/image/pleats-please.png",
-    description: `플리츠플리츠는 독창적인 플리츠 소재와 편안한 실루엣이 특징인 일본 디자이너 브랜드입니다.
+    description: {
+      ko: `플리츠플리츠는 독창적인 플리츠 소재와 편안한 실루엣이 특징인 일본 디자이너 브랜드입니다.
 
 #이세이미야케 #먼슬리 #미스트`,
+      en: `PLEATS PLEASE ISSEY MIYAKE is a Japanese designer brand known for its innovative pleated fabrics and comfortable silhouettes.
+
+#ISSEYMIYAKE #Monthly #Mist`,
+    },
   },
 
   토템: {
     image: "/image/toteme.png",
-    description: `토템은 북유럽 감성의 미니멀 디자인과 세련된 실루엣이 돋보이는 럭셔리 브랜드입니다.
+    description: {
+      ko: `토템은 북유럽 감성의 미니멀 디자인과 세련된 실루엣이 돋보이는 럭셔리 브랜드입니다.
 
 #스웨덴 #북유럽감성 #미니멀럭셔리`,
+      en: `TOTEME is a Swedish luxury fashion brand known for Scandinavian minimalism and refined silhouettes.
+
+#Sweden #ScandinavianStyle #MinimalLuxury`,
+    },
   },
 
   코치: {
     image: "/image/coach.png",
-    description: `코치는 뉴욕 헤리티지를 바탕으로 클래식과 트렌드를 결합한 모던 아메리칸 럭셔리 브랜드입니다.
+    description: {
+      ko: `코치는 뉴욕 헤리티지를 바탕으로 클래식과 트렌드를 결합한 모던 아메리칸 럭셔리 브랜드입니다.
 
 #뉴욕헤리티지 #클래식아메리칸 #태비백`,
+      en: `Coach is a modern American luxury brand that combines its New York heritage with classic design and contemporary style.
+
+#NewYorkHeritage #ClassicAmerican #TabbyBag`,
+    },
   },
 
   옴므플리쎄: {
     image: "/image/homme-plisse.jpg",
-    description: `플리츠 소재와 실용적인 실루엣이 특징인 이세이미야케 남성 브랜드입니다.
+    description: {
+      ko: `플리츠 소재와 실용적인 실루엣이 특징인 이세이미야케 남성 브랜드입니다.
 
 #일본 #이세이미야케 #플리츠`,
+      en: `HOMME PLISSÉ ISSEY MIYAKE is a menswear brand known for its signature pleated fabrics and functional silhouettes.
+
+#Japan #ISSEYMIYAKE #Pleats`,
+    },
   },
 
   언더커버: {
     image: "/image/undercover.png",
-    description: `언더커버는 스트릿의 에너지와 하이엔드의 정교함을 결합한 브랜드입니다.
+    description: {
+      ko: `언더커버는 스트릿의 에너지와 하이엔드의 정교함을 결합한 브랜드입니다.
 
 #일본 #준타카하시 #펑크룩`,
+      en: `UNDERCOVER is a Japanese fashion brand that combines the energy of street culture with the refinement of high-end fashion.
+
+#Japan #JunTakahashi #Punk`,
+    },
   },
 
   "아크네 스튜디오": {
     image: "/image/ACNE STUDIOS.svg",
-    description: `Acne Studios는 크리에이티브 디렉터 조니 요한슨이 스톡홀름에 설립한 브랜드입니다.
+    description: {
+      ko: `Acne Studios는 크리에이티브 디렉터 조니 요한슨이 스톡홀름에 설립한 브랜드입니다.
 
 #스웨덴 #젠더리스무드 #데일리&하이엔드믹스스타일`,
+      en: `Acne Studios is a brand founded in Stockholm by Creative Director Jonny Johansson.
+
+#Sweden #GenderlessMood #DailyHighEndMix`,
+    },
   },
 
   아워레가시: {
     image: "/image/OURLEGACY.jpg",
-    description: `OUR LEGACY는 Jockum Hallin, Cristopher Nying 및 Richardos Klaren이 2005년에 설립한 스톡홀름 기반의 독립 패션 브랜드입니다.
+    description: {
+      ko: `OUR LEGACY는 Jockum Hallin, Cristopher Nying 및 Richardos Klaren이 2005년에 설립한 스톡홀름 기반의 독립 패션 브랜드입니다.
 
 #스웨덴 #미니멀리즘 #Collaboration`,
+      en: `OUR LEGACY is an independent fashion brand based in Stockholm, founded in 2005 by Jockum Hallin, Cristopher Nying, and Richardos Klaren.
+
+#Sweden #Minimalism #Collaboration`,
+    },
+  },
+
+  아미: {
+    image: "/image/AMI.png",
+    description: {
+      ko: `파리에서 영감 받은 자연스럽고 우아한 감성의 남녀 럭셔리 패션 브랜드입니다.
+
+#프랑스 #프렌치시크 #하트로고`,
+      en: `A Paris-inspired luxury fashion brand offering men's and women's collections with natural, elegant sensibilities.
+
+#France #FrenchChic #HeartLogo`,
+    },
+  },
+
+  아더에러: {
+    image: "/image/ADERERROR.png",
+    description: {
+      ko: `아더에러는 2014년 설립되었으며 패션을 기반으로 한 문화 커뮤니케이션 브랜드입니다. 'but near missed things'이라는 브랜드 슬로건 아래 뜻밖의 경험을 느낄 수 있도록 표현하는 활동에 집중하고 있습니다.
+
+#한국 #시그니피컨트 #포스트미니멀`,
+      en: `Founded in 2014, ADERERROR is a cultural communication brand rooted in fashion. Under the slogan "but near missed things," the brand focuses on creating unexpected experiences by reinterpreting things that are often overlooked in everyday life.
+
+#Korea #Significant #PostMinimal`,
+    },
+  },
+
+  스톤아일랜드: {
+    image: "/image/STONEISLAND.jpg",
+    description: {
+      ko: `기능성과 실험정신을 바탕으로 혁신적인 소재와 염색 기술로 독보적인 스타일을 완성하며 브랜드를 상징하는 나침반 로고와 같이 패션을 넘어 실험과 연구로 정의되는 브랜드입니다.
+
+#이탈리아 #나일론메탈 #나침반로고`,
+      en: `Driven by functionality and a spirit of experimentation, Stone Island creates a distinctive identity through innovative materials and advanced dyeing techniques. Symbolized by its iconic compass logo, the brand is defined by continuous research and experimentation beyond fashion.
+
+#Italy #NylonMetal #CompassLogo`,
+    },
+  },
+
+  막스마라: {
+    image: "/image/MAXMARA.jpg",
+    description: {
+      ko: `1951년 런칭한 최초의 이탈리안 여성복 기업으로 전 세계에서 가장 중요한 패션하우스 중 하나이며, 우아하고 절제된 클래식 스타일로 유명한 프레타 포르테 브랜드입니다.
+
+#이탈리아 #올드머니룩 #아이코닉코트`,
+      en: `Max Mara is a prestigious Italian luxury fashion house founded in 1951 by Achille Maramotti in Reggio Emilia, pioneering modern high-quality ready-to-wear. Renowned for timeless, sophisticated womenswear, it is one of Italy's largest fashion groups.
+
+#Italy #OldMoneyStyle #IconicCoat`,
+    },
+  },
+
+  랑방컬렉션: {
+    image: "/image/LANVINCOLLECTION.jpg",
+    description: {
+      ko: `잔느 랑방이 창조한 'LANVIN PARIS'를 기반으로 2009년 런칭한 브랜드로, 비대칭적인 유연한 볼륨과 우아한 실루엣을 통해 새로운 엘레강스를 표현합니다.
+
+#프렌치감성 #페미닌룩 #올드머니룩`,
+      en: `Launched in 2009, Lanvin Collection is a new elegance brand inspired by Jeanne Lanvin's "LANVIN PARIS." Defined by fluid volumes, refined silhouettes, and luxurious materials, the brand presents a distinctive sense of timeless elegance.
+
+#FrenchStyle #FeminineLook #OldMoneyStyle`,
+    },
+  },
+
+  "Y-3": {
+    image: "/image/Y-3.png",
+    description: {
+      ko: `디자이너 요지 야마모토와 아디다스의 협업으로 탄생한 브랜드로, 아방가르드한 디자인과 스포티한 기능성이 조화된 하이엔드 패션을 제안합니다.
+
+#일본 #YohjiYamamoto #하이엔드스트릿`,
+      en: `A collaboration between Yohji Yamamoto and Adidas, Y-3 fuses avant-garde tailoring with sportswear functionality, defining a distinctive vision of premium street fashion.
+
+#Japan #YohjiYamamoto #HighEndStreet`,
+    },
+  },
+
+  R13: {
+    image: "/image/R13.png",
+    description: {
+      ko: `펑크와 그런지 무드의 거친 디테일과 중성적인 핏을 바탕으로 세련된 스타일을 선보이는 뉴욕 디자이너 브랜드입니다.
+
+#뉴욕 #펑크 #체크셔츠`,
+      en: `R13 is a New York designer brand known for its refined style, combining punk and grunge-inspired details with gender-neutral silhouettes.
+
+#NewYork #Punk #CheckShirt`,
+    },
+  },
+
+  헬렌카민스키: {
+    image: "/image/HELENKAMINSKI.jpg",
+    description: {
+      ko: `자연 친화적인 소재와 장인정신을 바탕으로 모자와 액세서리를 선보이는 호주 프리미엄 라이프스타일 브랜드입니다.
+
+#오스트레일리아 #모자 #비앙카`,
+      en: `Helen Kaminski is an Australian premium lifestyle brand known for hats and accessories crafted with natural materials and a strong commitment to craftsmanship.
+
+#Australia #Hat #Bianca`,
+    },
+  },
+
+  롱샴: {
+    image: "/image/LONGCHAMP.jpg",
+    description: {
+      ko: `1948년 프랑스 파리에서 시작해 프렌치 감성과 현대적인 실용성을 결합한 디자인을 선보이는 럭셔리 라이프스타일 브랜드입니다.
+
+#프랑스 #파리지앵 #르플리아쥬`,
+      en: `Founded in Paris in 1948, Longchamp is a luxury lifestyle brand that combines French sensibility with modern functionality.
+
+#France #Parisian #LePliage`,
+    },
+  },
+
+  바오바오: {
+    image: "/image/BAOBAO.jpg",
+    description: {
+      ko: `바오바오 이세이 미야케는 무한한 가변적인 모양을 만들 수 있게 배열된 조각들로 구성된다는 혁신적인 콘셉트와 생산 방식을 가지고 있는 브랜드입니다.
+
+#일본 #삼각조각모양 #캐럿`,
+      en: `BAO BAO ISSEY MIYAKE is a brand built on an innovative concept and production method, using geometric pieces arranged to create endlessly adaptable shapes.
+
+#Japan #TriangularPieces #Carat`,
+    },
+  },
+
+  투미: {
+    image: "/image/TUMI.jpg",
+    description: {
+      ko: `기능성과 세련된 디자인을 결합한 퍼포먼스 럭셔리 라이프스타일 브랜드입니다.
+
+#미국 #퍼포먼스럭셔리 #비즈니스백팩`,
+      en: `TUMI is a performance luxury lifestyle brand that combines functionality with sophisticated design.
+
+#USA #PerformanceLuxury #BusinessBackpack`,
+    },
   },
 };
