@@ -46,25 +46,46 @@ export default function StepInterest({
   const isKorean = language === "ko";
 
   return (
-    <div className="space-y-6 py-4">
-      <div>
-        <p className="text-xs tracking-[0.2em] text-[#9A8662] mb-3">
+    <div className="py-3">
+      {/* STEP */}
+      <div className="flex items-center gap-3 mb-7">
+        <span className="text-[11px] font-medium tracking-[0.18em] text-[#9A8662]">
           02
-        </p>
+        </span>
 
-        <h2 className="text-2xl font-semibold tracking-[-0.02em]">
-          {isKorean
-            ? "관심 있는 카테고리를 선택해주세요"
-            : "What are you looking for?"}
+        <span className="w-7 h-px bg-[#CFC9BF]" />
+
+        <span className="text-[9px] tracking-[0.22em] text-[#AAA49B]">
+          CATEGORY
+        </span>
+      </div>
+
+      {/* QUESTION */}
+      <div className="mb-8">
+        <h2 className="text-[27px] leading-[1.35] font-semibold tracking-[-0.035em]">
+          {isKorean ? (
+            <>
+              무엇을
+              <br />
+              찾고 계신가요?
+            </>
+          ) : (
+            <>
+              What are you
+              <br />
+              looking for?
+            </>
+          )}
         </h2>
 
-        <p className="text-sm text-[#8A8680] mt-2">
+        <p className="text-[14px] leading-6 text-[#858078] mt-4">
           {isKorean
             ? "가장 관심 있는 상품군을 선택해주세요."
             : "Select the category you're most interested in."}
         </p>
       </div>
 
+      {/* OPTIONS */}
       <div className="grid grid-cols-2 gap-3">
         {categoryOptions.map((category) => (
           <OptionButton

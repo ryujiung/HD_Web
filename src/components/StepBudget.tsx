@@ -36,25 +36,46 @@ export default function StepBudget({
   const isKorean = language === "ko";
 
   return (
-    <div className="space-y-6 py-4">
-      <div>
-        <p className="text-xs tracking-[0.2em] text-[#9A8662] mb-3">
+    <div className="py-3">
+      {/* STEP */}
+      <div className="flex items-center gap-3 mb-7">
+        <span className="text-[11px] font-medium tracking-[0.18em] text-[#9A8662]">
           04
-        </p>
+        </span>
 
-        <h2 className="text-2xl font-semibold tracking-[-0.02em]">
-          {isKorean
-            ? "예산을 선택해주세요"
-            : "Select your budget"}
+        <span className="w-7 h-px bg-[#CFC9BF]" />
+
+        <span className="text-[9px] tracking-[0.22em] text-[#AAA49B]">
+          BUDGET
+        </span>
+      </div>
+
+      {/* QUESTION */}
+      <div className="mb-8">
+        <h2 className="text-[27px] leading-[1.35] font-semibold tracking-[-0.035em]">
+          {isKorean ? (
+            <>
+              생각하고 계신
+              <br />
+              예산은 어느 정도인가요?
+            </>
+          ) : (
+            <>
+              What is your
+              <br />
+              budget?
+            </>
+          )}
         </h2>
 
-        <p className="text-sm text-[#8A8680] mt-2">
+        <p className="text-[14px] leading-6 text-[#858078] mt-4">
           {isKorean
             ? "쇼핑을 위해 생각하고 있는 예산을 선택해주세요."
             : "Choose the budget range you have in mind."}
         </p>
       </div>
 
+      {/* OPTIONS */}
       <div className="grid grid-cols-2 gap-3">
         {budgetOptions.map((budget) => (
           <OptionButton

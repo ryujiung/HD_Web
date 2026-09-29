@@ -55,7 +55,6 @@ export default function StepStyle({
   language: Language;
 }) {
   const [selected, setSelected] = useState<string[]>([]);
-
   const isKorean = language === "ko";
 
   const toggleStyle = (style: string) => {
@@ -67,25 +66,46 @@ export default function StepStyle({
   };
 
   return (
-    <div className="space-y-6 py-4">
-      <div>
-        <p className="text-xs tracking-[0.2em] text-[#9A8662] mb-3">
+    <div className="py-3">
+      {/* STEP */}
+      <div className="flex items-center gap-3 mb-7">
+        <span className="text-[11px] font-medium tracking-[0.18em] text-[#9A8662]">
           03
-        </p>
+        </span>
 
-        <h2 className="text-2xl font-semibold tracking-[-0.02em]">
-          {isKorean
-            ? "선호하는 스타일을 선택해주세요"
-            : "Choose your preferred styles"}
+        <span className="w-7 h-px bg-[#CFC9BF]" />
+
+        <span className="text-[9px] tracking-[0.22em] text-[#AAA49B]">
+          STYLE
+        </span>
+      </div>
+
+      {/* QUESTION */}
+      <div className="mb-8">
+        <h2 className="text-[27px] leading-[1.35] font-semibold tracking-[-0.035em]">
+          {isKorean ? (
+            <>
+              어떤 스타일을
+              <br />
+              선호하시나요?
+            </>
+          ) : (
+            <>
+              What is your
+              <br />
+              style?
+            </>
+          )}
         </h2>
 
-        <p className="text-sm text-[#8A8680] mt-2">
+        <p className="text-[14px] leading-6 text-[#858078] mt-4">
           {isKorean
-            ? "여러 스타일을 선택할 수 있습니다."
-            : "You can select more than one style."}
+            ? "취향에 맞는 스타일을 자유롭게 선택해주세요."
+            : "Select all the styles that match your taste."}
         </p>
       </div>
 
+      {/* OPTIONS */}
       <div className="grid grid-cols-2 gap-3">
         {styleOptions.map((style) => (
           <OptionButton
@@ -103,22 +123,25 @@ export default function StepStyle({
         />
       </div>
 
+      {/* NEXT */}
       <button
         type="button"
         onClick={() =>
           onNext(selected.length > 0 ? selected : undefined)
         }
         className="
-          w-full py-4
+          w-full mt-6 py-[17px]
           bg-[#1C1B19]
           text-white
           rounded-xl
-          text-sm font-medium
-          transition
+          text-[13px] font-medium
+          tracking-[0.03em]
+          transition-all
           hover:bg-black
+          active:scale-[0.99]
         "
       >
-        {isKorean ? "다음 →" : "Next →"}
+        {isKorean ? "다음 →" : "NEXT →"}
       </button>
     </div>
   );

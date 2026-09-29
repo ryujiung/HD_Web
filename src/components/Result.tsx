@@ -4,6 +4,37 @@ import { getTopBrands } from "@/lib/brandScore";
 import { brandInfo } from "@/lib/brandInfo";
 import { Answers, Language } from "./StepForm";
 
+const brandNamesEn: Record<string, string> = {
+  르메르: "LEMAIRE",
+  "alo Yoga": "ALO YOGA",
+  베이프: "BAPE",
+  우영미: "WOOYOUNGMI",
+  몽블랑: "MONTBLANC",
+  "TAG HEUER": "TAG HEUER",
+  크롬하츠선글라스: "CHROME HEARTS EYEWEAR",
+  스와로브스키: "SWAROVSKI",
+  타임파리: "TIME PARIS",
+  피어오브갓: "FEAR OF GOD",
+  플리츠플리츠: "PLEATS PLEASE ISSEY MIYAKE",
+  토템: "TOTEME",
+  코치: "COACH",
+  옴므플리쎄: "HOMME PLISSÉ ISSEY MIYAKE",
+  언더커버: "UNDERCOVER",
+  "아크네 스튜디오": "ACNE STUDIOS",
+  아워레가시: "OUR LEGACY",
+  아미: "AMI",
+  아더에러: "ADERERROR",
+  스톤아일랜드: "STONE ISLAND",
+  막스마라: "MAX MARA",
+  랑방컬렉션: "LANVIN COLLECTION",
+  "Y-3": "Y-3",
+  R13: "R13",
+  헬렌카민스키: "HELEN KAMINSKI",
+  롱샴: "LONGCHAMP",
+  바오바오: "BAO BAO ISSEY MIYAKE",
+  투미: "TUMI",
+};
+
 export default function Result({
   answer,
   onReset,
@@ -15,141 +46,161 @@ export default function Result({
 }) {
   const results = getTopBrands(answer);
   const topBrand = results[0];
-
   const info = brandInfo[topBrand.name];
+
   const isKorean = language === "ko";
 
+  const getBrandName = (name: string) => {
+    if (isKorean) return name;
+    return brandNamesEn[name] ?? name;
+  };
+
   return (
-    <div className="space-y-5">
+    <div className="pb-2">
 
-      {/* 결과 타이틀 */}
-      <div className="pt-2 pb-3">
-        <p className="text-xs tracking-[0.2em] text-[#9A8662] mb-3">
-          YOUR RESULT
-        </p>
+      {/* RESULT HEADER */}
+      <div className="pt-3 pb-8">
+        <div className="flex items-center gap-3 mb-5">
+          <span className="w-8 h-px bg-[#9A8662]" />
 
-        <h2 className="text-2xl font-semibold tracking-[-0.02em]">
-          {isKorean ? "추천 브랜드 TOP 3" : "TOP 3 BRAND MATCHES"}
+          <p className="text-[10px] tracking-[0.28em] text-[#8B7653] font-medium">
+            PERSONAL SELECTION
+          </p>
+        </div>
+
+        <h2 className="text-[30px] leading-[1.3] font-semibold tracking-[-0.035em]">
+          {isKorean ? (
+            <>
+              당신을 위한
+              <br />
+              브랜드를 찾았어요.
+            </>
+          ) : (
+            <>
+              Your brand matches
+              <br />
+              are ready.
+            </>
+          )}
         </h2>
 
-        <p className="text-sm text-[#8A8680] mt-2">
+        <p className="text-[14px] leading-6 text-[#858078] mt-4">
           {isKorean
-            ? "선택하신 취향을 바탕으로 추천해드려요."
-            : "Based on your preferences, here are our recommendations."}
+            ? "선택하신 취향을 바탕으로 가장 잘 어울리는 브랜드를 추천해드려요."
+            : "Discover the brands that best match your style and preferences."}
         </p>
       </div>
 
-      {/* 1위 브랜드 */}
-      <div className="border border-[#E8E6E1] rounded-2xl p-5 bg-white">
+      {/* BEST MATCH */}
+      <section className="border-t border-[#D9D5CE] pt-6">
 
-        <div className="flex justify-between items-start mb-5">
-          <div>
-            <div className="flex items-center gap-3">
-              <span className="text-3xl font-light italic">
-                01
-              </span>
+        <div className="flex items-end justify-between mb-6">
+          <div className="flex items-baseline gap-4">
+            <span className="text-[42px] leading-none font-light italic tracking-[-0.05em]">
+              01
+            </span>
 
-              <span className="text-[11px] tracking-[0.2em] text-[#9A8662]">
-                BEST MATCH
-              </span>
-            </div>
-
-            <h3 className="text-xl font-semibold mt-4">
-              {topBrand.name}
-            </h3>
+            <span className="text-[10px] tracking-[0.24em] text-[#9A8662] font-medium">
+              BEST MATCH
+            </span>
           </div>
 
-          {/* 개발 중 확인용 점수 */}
-          <div className="text-right">
-            <p className="text-[10px] tracking-wider text-[#9A958D]">
-              MATCH
-            </p>
-
-            <p className="text-xl font-medium mt-1">
-              {topBrand.score}
-            </p>
-          </div>
+          <span className="text-[10px] tracking-[0.16em] text-[#AAA49B]">
+            THE HYUNDAI SEOUL · 2F
+          </span>
         </div>
 
-        {info && (
-          <>
-            {/* 이미지가 있는 브랜드만 이미지 노출 */}
-            {info.image && (
-              <div className="w-full h-48 bg-[#FAF9F6] rounded-xl flex items-center justify-center p-5">
-                <img
-                  src={info.image}
-                  alt={topBrand.name}
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-            )}
+        {/* 브랜드명 */}
+        <h3 className="text-[26px] leading-tight font-semibold tracking-[-0.03em] mb-5">
+          {getBrandName(topBrand.name)}
+        </h3>
 
-            {/* 선택한 언어에 맞춰 브랜드 설명 전환 */}
-            <p
-              className={`text-[14px] leading-6 text-[#68645E] whitespace-pre-line ${
-                info.image ? "mt-5" : ""
-              }`}
-            >
+        {/* 브랜드 이미지 */}
+        {info?.image && (
+          <div className="w-full h-56 bg-[#F7F6F2] rounded-[18px] flex items-center justify-center p-7 overflow-hidden">
+            <img
+              src={info.image}
+              alt={getBrandName(topBrand.name)}
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
+        )}
+
+        {/* 브랜드 설명 */}
+        {info && (
+          <div className={info.image ? "mt-6" : "mt-2"}>
+            <p className="text-[14px] leading-[1.8] text-[#5F5B55] whitespace-pre-line">
               {isKorean
                 ? info.description.ko
                 : info.description.en}
             </p>
-          </>
+          </div>
         )}
-      </div>
+      </section>
 
-      {/* 2위 / 3위 */}
-      {results.slice(1).map((r, index) => (
-        <div
-          key={r.name}
-          className="
-            px-5 py-4
-            border border-[#E8E6E1]
-            rounded-xl
-            flex items-center justify-between
-            bg-white
-          "
-        >
-          <div className="flex items-center gap-4">
-            <span className="text-xl font-light italic text-[#77736D]">
-              0{index + 2}
-            </span>
+      {/* OTHER MATCHES */}
+      <section className="mt-10 border-t border-[#D9D5CE]">
 
-            <span className="font-medium">
-              {r.name}
-            </span>
-          </div>
-
-          {/* 개발 중 확인용 점수 */}
-          <div className="text-right">
-            <p className="text-[9px] tracking-wider text-[#AAA59D]">
-              MATCH
-            </p>
-
-            <p className="text-sm mt-1">
-              {r.score}
-            </p>
-          </div>
+        <div className="py-5">
+          <p className="text-[10px] tracking-[0.24em] text-[#9A8662] font-medium">
+            {isKorean ? "MORE FOR YOU" : "MORE FOR YOU"}
+          </p>
         </div>
-      ))}
 
-      {/* 처음부터 */}
+        {results.slice(1).map((brand, index) => (
+          <div
+            key={brand.name}
+            className="
+              group
+              py-5
+              border-t border-[#E8E5DF]
+              flex items-center justify-between
+            "
+          >
+            <div className="flex items-center gap-5 min-w-0">
+              <span className="text-[22px] font-light italic text-[#8A857E]">
+                0{index + 2}
+              </span>
+
+              <span className="text-[15px] font-medium tracking-[-0.01em] truncate">
+                {getBrandName(brand.name)}
+              </span>
+            </div>
+
+            <span className="text-[#A9A39A] text-lg transition-transform group-hover:translate-x-1">
+              →
+            </span>
+          </div>
+        ))}
+      </section>
+
+      {/* RESET */}
       <button
         onClick={onReset}
         className="
-          w-full py-4 mt-2
+          w-full mt-10 py-[17px]
           bg-[#1C1B19]
           text-white
           rounded-xl
-          text-sm font-medium
-          transition
+          text-[13px] font-medium
+          tracking-[0.03em]
+          transition-all
           hover:bg-black
+          active:scale-[0.99]
         "
       >
         {isKorean
           ? "처음부터 다시 선택하기"
-          : "Start Over"}
+          : "START OVER"}
       </button>
+
+      {/* FOOTER */}
+      <div className="pt-7 text-center">
+        <p className="text-[9px] tracking-[0.25em] text-[#B2ADA5]">
+          AI PERSONAL SHOPPER · THE HYUNDAI SEOUL
+        </p>
+      </div>
+
     </div>
   );
 }
