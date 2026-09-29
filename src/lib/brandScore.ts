@@ -1,5 +1,3 @@
-// lib/brandScore.ts
-
 export type Answer = {
   gender?: string;
   styles?: string[];
@@ -7,7 +5,7 @@ export type Answer = {
   budget?: string;
 };
 
-type Brand = {
+export type Brand = {
   name: string;
   scores: {
     gender?: Record<string, number>;
@@ -22,11 +20,7 @@ export const brands: Brand[] = [
     name: "르메르",
     scores: {
       gender: { male: 3, female: 7 },
-      styles: {
-        "클래식 / 비즈니스": 2,
-        페미닌: 1,
-        미니멀: 7,
-      },
+      styles: { "클래식 / 비즈니스": 2, 페미닌: 1, 미니멀: 7 },
       category: {
         의류: true,
         가방: true,
@@ -35,14 +29,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-HIGH": 10,
-        MID: 5,
-        HIGH: 5,
-      },
+      budget: { "MID-HIGH": 10, MID: 5, HIGH: 5 },
     },
   },
-
   {
     name: "alo Yoga",
     scores: {
@@ -60,21 +49,14 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: true,
       },
-      budget: {
-        "MID-LOW": 10,
-        MID: 5,
-      },
+      budget: { "MID-LOW": 10, MID: 5 },
     },
   },
-
   {
     name: "베이프",
     scores: {
       gender: { male: 4, female: 6 },
-      styles: {
-        스트리트웨어: 6,
-        빈티지: 4,
-      },
+      styles: { 스트리트웨어: 6, 빈티지: 4 },
       category: {
         의류: true,
         가방: false,
@@ -83,13 +65,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 10,
-        MID: 5,
-      },
+      budget: { "MID-LOW": 10, MID: 5 },
     },
   },
-
   {
     name: "우영미",
     scores: {
@@ -108,14 +86,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        MID: 10,
-        "MID-LOW": 5,
-        "MID-HIGH": 5,
-      },
+      budget: { MID: 10, "MID-LOW": 5, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "몽블랑",
     scores: {
@@ -132,14 +105,9 @@ export const brands: Brand[] = [
         시계: true,
         라이프스타일: true,
       },
-      budget: {
-        MID: 5,
-        "MID-HIGH": 10,
-        HIGH: 5,
-      },
+      budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
     },
   },
-
   {
     name: "TAG HEUER",
     scores: {
@@ -156,13 +124,9 @@ export const brands: Brand[] = [
         시계: true,
         라이프스타일: false,
       },
-      budget: {
-        "MID-HIGH": 5,
-        HIGH: 10,
-      },
+      budget: { "MID-HIGH": 5, HIGH: 10 },
     },
   },
-
   {
     name: "크롬하츠선글라스",
     scores: {
@@ -179,13 +143,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-HIGH": 5,
-        HIGH: 10,
-      },
+      budget: { "MID-HIGH": 5, HIGH: 10 },
     },
   },
-
   {
     name: "스와로브스키",
     scores: {
@@ -203,13 +163,9 @@ export const brands: Brand[] = [
         시계: true,
         라이프스타일: true,
       },
-      budget: {
-        "MID-LOW": 10,
-        MID: 5,
-      },
+      budget: { "MID-LOW": 10, MID: 5 },
     },
   },
-
   {
     name: "타임파리",
     scores: {
@@ -227,14 +183,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        MID: 10,
-        "MID-LOW": 5,
-        "MID-HIGH": 5,
-      },
+      budget: { MID: 10, "MID-LOW": 5, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "피어오브갓",
     scores: {
@@ -252,14 +203,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        MID: 5,
-        "MID-HIGH": 10,
-        HIGH: 5,
-      },
+      budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
     },
   },
-
   {
     name: "플리츠플리츠",
     scores: {
@@ -277,14 +223,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "토템",
     scores: {
@@ -302,14 +243,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        MID: 5,
-        "MID-HIGH": 10,
-        HIGH: 5,
-      },
+      budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
     },
   },
-
   {
     name: "코치",
     scores: {
@@ -326,14 +262,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "옴므플리쎄",
     scores: {
@@ -351,14 +282,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "언더커버",
     scores: {
@@ -377,14 +303,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: true,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "아크네 스튜디오",
     scores: {
@@ -402,14 +323,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: true,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "아워레가시",
     scores: {
@@ -427,14 +343,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "아미",
     scores: {
@@ -452,14 +363,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "아더에러",
     scores: {
@@ -476,13 +382,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: true,
       },
-      budget: {
-        "MID-LOW": 10,
-        MID: 5,
-      },
+      budget: { "MID-LOW": 10, MID: 5 },
     },
   },
-
   {
     name: "스톤아일랜드",
     scores: {
@@ -500,14 +402,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        MID: 5,
-        "MID-HIGH": 10,
-        HIGH: 5,
-      },
+      budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
     },
   },
-
   {
     name: "막스마라",
     scores: {
@@ -525,14 +422,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        MID: 5,
-        "MID-HIGH": 10,
-        HIGH: 5,
-      },
+      budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
     },
   },
-
   {
     name: "랑방컬렉션",
     scores: {
@@ -549,14 +441,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "Y-3",
     scores: {
@@ -574,13 +461,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 10,
-        MID: 5,
-      },
+      budget: { "MID-LOW": 10, MID: 5 },
     },
   },
-
   {
     name: "R13",
     scores: {
@@ -598,14 +481,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "헬렌카민스키",
     scores: {
@@ -622,13 +500,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-      },
+      budget: { "MID-LOW": 5, MID: 10 },
     },
   },
-
   {
     name: "롱샴",
     scores: {
@@ -646,13 +520,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 10,
-        MID: 5,
-      },
+      budget: { "MID-LOW": 10, MID: 5 },
     },
   },
-
   {
     name: "바오바오",
     scores: {
@@ -669,14 +539,9 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
-
   {
     name: "투미",
     scores: {
@@ -693,17 +558,22 @@ export const brands: Brand[] = [
         시계: false,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-      },
+      budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
 ];
 
 export function getTopBrands(answer: Answer) {
-  const results = brands.map((brand) => {
+  // 카테고리를 선택한 경우,
+  // 해당 카테고리를 실제 취급하는 브랜드만 추천 후보로 사용
+  const filteredBrands = answer.category
+    ? brands.filter(
+        (brand) =>
+          brand.scores.category?.[answer.category as string] === true
+      )
+    : brands;
+
+  const results = filteredBrands.map((brand) => {
     let totalScore = 0;
 
     // 성별 점수
@@ -712,31 +582,25 @@ export function getTopBrands(answer: Answer) {
     }
 
     // 스타일 점수
-    // 선택 순서와 관계없이 모든 선택 스타일을 동일하게 반영
-    // 스타일 총점은 최대 10점
-if (answer.styles && answer.styles.length > 0) {
-  let styleScore = 0;
+    // 선택한 모든 스타일의 점수를 합산하되 최대 10점
+    if (answer.styles && answer.styles.length > 0) {
+      let styleScore = 0;
 
-  answer.styles.forEach((style) => {
-    styleScore += brand.scores.styles?.[style] ?? 0;
-  });
+      answer.styles.forEach((style) => {
+        styleScore += brand.scores.styles?.[style] ?? 0;
+      });
 
-  totalScore += Math.min(styleScore, 10);
-}
-
-    // 카테고리 점수
-    if (answer.category) {
-      totalScore += brand.scores.category?.[answer.category] ? 5 : 0;
+      totalScore += Math.min(styleScore, 10);
     }
 
-    // 가격대 점수
+    // 예산 점수
     if (answer.budget) {
       totalScore += brand.scores.budget?.[answer.budget] ?? 0;
     }
 
     return {
       name: brand.name,
-      score: Math.round(totalScore),
+      score: totalScore,
     };
   });
 

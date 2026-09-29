@@ -143,7 +143,7 @@ export default function Result({
 
         <div className="py-5">
           <p className="text-[10px] tracking-[0.24em] text-[#9A8662] font-medium">
-            {isKorean ? "MORE FOR YOU" : "MORE FOR YOU"}
+            MORE FOR YOU
           </p>
         </div>
 
@@ -151,10 +151,9 @@ export default function Result({
           <div
             key={brand.name}
             className="
-              group
               py-5
               border-t border-[#E8E5DF]
-              flex items-center justify-between
+              flex items-center
             "
           >
             <div className="flex items-center gap-5 min-w-0">
@@ -162,14 +161,10 @@ export default function Result({
                 0{index + 2}
               </span>
 
-              <span className="text-[15px] font-medium tracking-[-0.01em] truncate">
+              <span className="text-[15px] font-medium tracking-[-0.01em]">
                 {getBrandName(brand.name)}
               </span>
             </div>
-
-            <span className="text-[#A9A39A] text-lg transition-transform group-hover:translate-x-1">
-              →
-            </span>
           </div>
         ))}
       </section>
