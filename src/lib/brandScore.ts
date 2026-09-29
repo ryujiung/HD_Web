@@ -385,6 +385,56 @@ export const brands: Brand[] = [
       },
     },
   },
+
+  {
+    name: "아크네 스튜디오",
+    scores: {
+      gender: { male: 5, female: 5 },
+      styles: {
+        젠더리스: 5,
+        캐주얼: 3,
+        "클래식 / 비즈니스": 2,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: true,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
+    },
+  },
+
+  {
+    name: "아워레가시",
+    scores: {
+      gender: { male: 6, female: 4 },
+      styles: {
+        젠더리스: 3,
+        캐주얼: 3,
+        미니멀: 4,
+      },
+      category: {
+        의류: true,
+        가방: false,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+      },
+    },
+  },
 ];
 
 export function getTopBrands(answer: Answer) {
