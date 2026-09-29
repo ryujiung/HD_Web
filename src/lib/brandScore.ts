@@ -106,7 +106,7 @@ export const brands: Brand[] = [
         가방: true,
         신발: false,
         "악세사리(주얼리,모자,선글라스)": true,
-        시계: true,
+        시계: false,
         라이프스타일: true,
       },
       budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
@@ -129,7 +129,7 @@ export const brands: Brand[] = [
         시계: true,
         라이프스타일: false,
       },
-      budget: { HIGH: 10 },
+      budget: { "WATCH-ENTRY-LUXURY": 10 },
     },
   },
 
@@ -167,7 +167,7 @@ export const brands: Brand[] = [
         가방: false,
         신발: false,
         "악세사리(주얼리,모자,선글라스)": true,
-        시계: true,
+        시계: false,
         라이프스타일: true,
       },
       budget: { "MID-LOW": 10, MID: 5 },
@@ -656,7 +656,7 @@ export const brands: Brand[] = [
         시계: true,
         라이프스타일: false,
       },
-      budget: { "MID-HIGH": 10, HIGH: 0 },
+      budget: { "WATCH-MIDDLE": 10 },
     },
   },
 
@@ -677,7 +677,7 @@ export const brands: Brand[] = [
         시계: true,
         라이프스타일: false,
       },
-      budget: { "MID-HIGH": 5, HIGH: 10 },
+      budget: { "WATCH-ENTRY-LUXURY": 10 },
     },
   },
 
@@ -698,12 +698,7 @@ export const brands: Brand[] = [
         시계: true,
         라이프스타일: false,
       },
-      budget: {
-        "MID-LOW": 5,
-        MID: 10,
-        "MID-HIGH": 5,
-        HIGH: 10,
-      },
+      budget: { "WATCH-LUXURY": 10 },
     },
   },
 
@@ -724,7 +719,7 @@ export const brands: Brand[] = [
         시계: true,
         라이프스타일: false,
       },
-      budget: { HIGH: 10 },
+      budget: { "WATCH-LUXURY": 10 },
     },
   },
 

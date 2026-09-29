@@ -39,67 +39,123 @@ export default function StepForm() {
   const isKorean = language === "ko";
 
   return (
-    <div className="space-y-6 text-[#171717]">
-      {/* 언어 선택 */}
-      <div className="flex justify-end">
-        <div className="flex items-center gap-2 text-xs">
+    <div className="space-y-6 text-[#1D211F]">
+
+      {/* KR / EN */}
+      <div className="flex justify-end pt-2">
+        <div
+          className="
+            inline-flex items-center
+            p-1
+            bg-[#F2F1EF]
+            rounded-full
+            border border-[#E8E5E3]
+          "
+        >
           <button
             type="button"
             onClick={() => setLanguage("ko")}
-            className={
-              language === "ko"
-                ? "font-semibold text-[#1C1B19]"
-                : "text-[#AAA59D]"
-            }
+            className={`
+              min-w-[42px]
+              px-3 py-2
+              rounded-full
+              text-[10px]
+              tracking-[0.12em]
+              font-medium
+              transition-all duration-200
+              ${
+                language === "ko"
+                  ? "bg-[#4A675C] text-white shadow-sm"
+                  : "text-[#8C918E] hover:text-[#4A675C]"
+              }
+            `}
           >
             KR
           </button>
 
-          <span className="text-[#D8D4CD]">|</span>
-
           <button
             type="button"
             onClick={() => setLanguage("en")}
-            className={
-              language === "en"
-                ? "font-semibold text-[#1C1B19]"
-                : "text-[#AAA59D]"
-            }
+            className={`
+              min-w-[42px]
+              px-3 py-2
+              rounded-full
+              text-[10px]
+              tracking-[0.12em]
+              font-medium
+              transition-all duration-200
+              ${
+                language === "en"
+                  ? "bg-[#4A675C] text-white shadow-sm"
+                  : "text-[#8C918E] hover:text-[#4A675C]"
+              }
+            `}
           >
             EN
           </button>
         </div>
       </div>
 
-      {/* STEP 0 : 메인 */}
+      {/* STEP 0 : MAIN */}
       {step === 0 && (
         <div className="min-h-[60vh] flex flex-col justify-center">
-          <p className="text-xs tracking-[0.25em] text-[#8B7653] font-medium mb-5">
-            AI PERSONAL SHOPPER
-          </p>
 
-          <h1 className="text-[32px] leading-[1.25] font-semibold tracking-[-0.03em]">
+          {/* SERVICE LABEL */}
+          <div className="flex items-center gap-3 mb-7">
+            <span className="w-8 h-px bg-[#4A675C]" />
+
+            <p
+              className="
+                text-[9px]
+                tracking-[0.28em]
+                text-[#4A675C]
+                font-semibold
+              "
+            >
+              AI PERSONAL SHOPPER
+            </p>
+          </div>
+
+          {/* TITLE */}
+          <h1
+            className="
+              text-[33px]
+              sm:text-[35px]
+              leading-[1.25]
+              font-semibold
+              tracking-[-0.04em]
+              text-[#1D211F]
+            "
+          >
             {isKorean ? (
               <>
-                당신에게 어울리는
+                당신의 취향에 맞는
                 <br />
-                브랜드를 찾아보세요.
+                브랜드를 만나보세요.
               </>
             ) : (
               <>
                 Discover the brands
                 <br />
-                that suit you.
+                that match your style.
               </>
             )}
           </h1>
 
-          <p className="text-[15px] leading-7 text-[#77736D] mt-6">
+          {/* DESCRIPTION */}
+          <p
+            className="
+              text-[14px]
+              leading-7
+              text-[#777D79]
+              mt-6
+            "
+          >
             {isKorean ? (
               <>
-                간단한 질문에 답해주시면,
+                몇 가지 간단한 질문을 통해
                 <br />
-                고객님의 취향에 가장 잘 어울리는
+                고객님의 취향과 쇼핑 목적에 어울리는
                 <br />
                 2F 브랜드를 추천해드립니다.
               </>
@@ -107,27 +163,97 @@ export default function StepForm() {
               <>
                 Answer a few simple questions
                 <br />
-                and discover the 2F brands
+                to discover the 2F brands that best match
                 <br />
-                that best match your style.
+                your style and shopping preferences.
               </>
             )}
           </p>
 
-          <button
-            onClick={() => setStep(1)}
+          {/* LILAC INFO CARD */}
+          <div
             className="
-              w-full mt-10 py-4
-              bg-[#1C1B19] text-white
-              rounded-xl
-              text-sm font-medium
-              tracking-wide
-              transition
-              hover:bg-black
+              mt-8
+              px-5 py-4
+              bg-[#F0E4ED]/60
+              border border-[#EADDE6]
+              rounded-2xl
             "
           >
-            {isKorean ? "시작하기 →" : "Get Started →"}
+            <div className="flex items-center gap-3">
+
+              <div
+                className="
+                  flex items-center justify-center
+                  w-8 h-8
+                  rounded-full
+                  bg-white/70
+                "
+              >
+                <span className="w-[6px] h-[6px] rounded-full bg-[#4A675C]" />
+              </div>
+
+              <div>
+                <p
+                  className="
+                    text-[9px]
+                    tracking-[0.18em]
+                    text-[#4A675C]
+                    font-semibold
+                  "
+                >
+                  PERSONALIZED CURATION
+                </p>
+
+                <p className="text-[11px] text-[#777274] mt-1">
+                  {isKorean
+                    ? "취향 · 스타일 · 관심 카테고리를 기반으로 추천합니다."
+                    : "Curated around your style, interests and preferences."}
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          {/* START BUTTON */}
+          <button
+            type="button"
+            onClick={() => setStep(1)}
+            className="
+              w-full
+              mt-9
+              py-[17px]
+              bg-[#4A675C]
+              text-white
+              rounded-xl
+              text-[13px]
+              font-medium
+              tracking-[0.04em]
+              transition-all duration-200
+              hover:bg-[#3F594F]
+              active:scale-[0.99]
+              shadow-[0_8px_24px_rgba(74,103,92,0.16)]
+            "
+          >
+            {isKorean ? "시작하기 →" : "GET STARTED →"}
           </button>
+
+          {/* BOTTOM TEXT */}
+          <div className="flex items-center justify-center gap-3 mt-7">
+            <span className="w-5 h-px bg-[#D5D8D6]" />
+
+            <p
+              className="
+                text-[8px]
+                tracking-[0.22em]
+                text-[#A0A5A2]
+              "
+            >
+              2F · MODERN MOOD
+            </p>
+
+            <span className="w-5 h-px bg-[#D5D8D6]" />
+          </div>
         </div>
       )}
 
@@ -147,7 +273,10 @@ export default function StepForm() {
             language={language}
           />
 
-          <BackButton onClick={prev} language={language} />
+          <BackButton
+            onClick={prev}
+            language={language}
+          />
         </>
       )}
 
@@ -159,19 +288,26 @@ export default function StepForm() {
             language={language}
           />
 
-          <BackButton onClick={prev} language={language} />
+          <BackButton
+            onClick={prev}
+            language={language}
+          />
         </>
       )}
 
-      {/* STEP 4 : 예산 */}
+      {/* STEP 4 : 예산 / 워치 등급 */}
       {step === 4 && (
         <>
           <StepBudget
             onSelect={(v) => next("budget", v)}
             language={language}
+            category={answers.category}
           />
 
-          <BackButton onClick={prev} language={language} />
+          <BackButton
+            onClick={prev}
+            language={language}
+          />
         </>
       )}
 
@@ -196,17 +332,23 @@ function BackButton({
 }) {
   return (
     <button
+      type="button"
       onClick={onClick}
       className="
-        w-full py-3
-        text-sm text-[#77736D]
-        border border-[#E5E2DC]
+        w-full
+        py-3
+        text-[12px]
+        text-[#7D837F]
+        border border-[#E2E5E3]
         rounded-xl
-        transition
-        hover:bg-[#F7F6F2]
+        tracking-[0.02em]
+        transition-all duration-200
+        hover:bg-[#F3F6F4]
+        hover:border-[#CBD5D0]
+        hover:text-[#4A675C]
       "
     >
-      {language === "ko" ? "← 이전" : "← Back"}
+      {language === "ko" ? "← 이전" : "← BACK"}
     </button>
   );
 }

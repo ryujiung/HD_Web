@@ -67,22 +67,44 @@ export default function StepStyle({
 
   return (
     <div className="py-3">
+
       {/* STEP */}
       <div className="flex items-center gap-3 mb-7">
-        <span className="text-[11px] font-medium tracking-[0.18em] text-[#9A8662]">
+        <span
+          className="
+            text-[11px]
+            font-semibold
+            tracking-[0.18em]
+            text-[#4A675C]
+          "
+        >
           03
         </span>
 
-        <span className="w-7 h-px bg-[#CFC9BF]" />
+        <span className="w-7 h-px bg-[#CBD5D0]" />
 
-        <span className="text-[9px] tracking-[0.22em] text-[#AAA49B]">
+        <span
+          className="
+            text-[9px]
+            tracking-[0.22em]
+            text-[#969C98]
+          "
+        >
           STYLE
         </span>
       </div>
 
       {/* QUESTION */}
       <div className="mb-8">
-        <h2 className="text-[27px] leading-[1.35] font-semibold tracking-[-0.035em]">
+        <h2
+          className="
+            text-[27px]
+            leading-[1.35]
+            font-semibold
+            tracking-[-0.035em]
+            text-[#1D211F]
+          "
+        >
           {isKorean ? (
             <>
               어떤 스타일을
@@ -98,7 +120,14 @@ export default function StepStyle({
           )}
         </h2>
 
-        <p className="text-[14px] leading-6 text-[#858078] mt-4">
+        <p
+          className="
+            text-[14px]
+            leading-6
+            text-[#7D837F]
+            mt-4
+          "
+        >
           {isKorean
             ? "취향에 맞는 스타일을 자유롭게 선택해주세요."
             : "Select all the styles that match your taste."}
@@ -123,6 +152,21 @@ export default function StepStyle({
         />
       </div>
 
+      {/* SELECTION INFO */}
+      <div className="flex items-center justify-between mt-5 px-1">
+        <span className="text-[10px] tracking-[0.06em] text-[#9A9F9C]">
+          {isKorean ? "복수 선택 가능" : "MULTIPLE SELECTION"}
+        </span>
+
+        {selected.length > 0 && (
+          <span className="text-[10px] font-medium text-[#4A675C]">
+            {isKorean
+              ? `${selected.length}개 선택`
+              : `${selected.length} SELECTED`}
+          </span>
+        )}
+      </div>
+
       {/* NEXT */}
       <button
         type="button"
@@ -130,15 +174,19 @@ export default function StepStyle({
           onNext(selected.length > 0 ? selected : undefined)
         }
         className="
-          w-full mt-6 py-[17px]
-          bg-[#1C1B19]
+          w-full
+          mt-6
+          py-[17px]
+          bg-[#4A675C]
           text-white
           rounded-xl
-          text-[13px] font-medium
-          tracking-[0.03em]
-          transition-all
-          hover:bg-black
+          text-[13px]
+          font-medium
+          tracking-[0.04em]
+          transition-all duration-200
+          hover:bg-[#3F594F]
           active:scale-[0.99]
+          shadow-[0_8px_24px_rgba(74,103,92,0.16)]
         "
       >
         {isKorean ? "다음 →" : "NEXT →"}

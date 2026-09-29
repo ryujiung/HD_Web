@@ -33,30 +33,33 @@ export default function OptionButton({
         ${
           active
             ? `
-              bg-[#1C1B19]
-              border-[#1C1B19]
+              bg-[#4A675C]
+              border-[#4A675C]
               text-white
+              shadow-[0_6px_18px_rgba(74,103,92,0.14)]
             `
             : `
               bg-white
-              border-[#DDD9D2]
-              text-[#3E3B37]
-              hover:border-[#8B7653]
-              hover:bg-[#FAF9F6]
+              border-[#DDE2DF]
+              text-[#353A37]
+              hover:border-[#4A675C]
+              hover:bg-[#F5F8F6]
+              hover:text-[#3F594F]
             `
         }
       `}
     >
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex items-center justify-between gap-3">
         <span>{label}</span>
 
         {active && (
           <span
             className="
               flex-shrink-0
-              w-[17px] h-[17px]
+              w-[18px] h-[18px]
               rounded-full
-              border border-white/60
+              border border-white/50
+              bg-white/10
               flex items-center justify-center
               text-[9px]
               leading-none
