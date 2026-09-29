@@ -56,26 +56,26 @@ export const brandInfo: Record<string, BrandInfo> = {
   },
 
   몽블랑: {
-    image: "/image/montblanc.jpg",
+    image: "/image/MONTBLANC.png",
     description: {
-      ko: `몽블랑은 고급 필기구와 가죽 제품으로 유명한 프리미엄 브랜드입니다.
+      ko: `몽블랑은 필기구와 시계, 레더 제품 등 다양한 컬렉션을 선보이는 럭셔리 비즈니스 라이프스타일 메종입니다.
 
-#독일 #필기구 #레더`,
-      en: `Montblanc is a premium brand renowned for luxury writing instruments, leather goods, watches, and accessories.
+#독일 #마이스터스튁 #럭셔리라이프스타일`,
+      en: `Montblanc is a luxury business lifestyle Maison showcasing exceptional craftsmanship across writing instruments, watches, and leather goods.
 
-#Germany #WritingInstruments #Leather`,
+#Germany #Meisterstück #LuxuryLifestyle`,
     },
   },
 
   "TAG HEUER": {
-    image: "/image/tagheuer.jpg",
+    image: "/image/TAGHEUER.png",
     description: {
-      ko: `태그호이어는 스포츠 감성의 스위스 럭셔리 시계 브랜드입니다.
+      ko: `1860년 설립된 스위스 럭셔리 워치 브랜드 태그호이어는 혁신적인 기술력과 도전 정신을 바탕으로 스포츠 워치와 크로노그래프 분야를 선도하며, 까레라·모나코·포뮬러 1 등 아이코닉한 타임피스를 선보입니다.
 
-#스위스 #럭셔리워치 #스포츠`,
-      en: `TAG Heuer is a Swiss luxury watch brand known for its strong connection to sports, performance, and precision.
+#스위스 #까레라 #F1타임키퍼`,
+      en: `Founded in 1860, TAG Heuer is a Swiss luxury watch brand known for its innovative technology and pioneering spirit, creating iconic sports watches and chronographs including the Carrera, Monaco, and Formula 1.
 
-#Switzerland #LuxuryWatch #Sports`,
+#Switzerland #Carrera #F1Timekeeper`,
     },
   },
 
@@ -340,6 +340,151 @@ export const brandInfo: Record<string, BrandInfo> = {
       en: `TUMI is a performance luxury lifestyle brand that combines functionality with sophisticated design.
 
 #USA #PerformanceLuxury #BusinessBackpack`,
+    },
+  },
+
+  // ─────────────────────────────
+  // 명품
+  // ─────────────────────────────
+
+  프라다남성: {
+    image: "/image/PRADA.png",
+    description: {
+      ko: `프라다는 혁신적인 소재와 정제된 디자인을 바탕으로 전통과 현대적 감각을 결합한 컬렉션을 선보이는 이탈리아 럭셔리 패션 하우스입니다.
+
+#이탈리아 #밀라노 #모던럭셔리`,
+      en: `Prada is an Italian luxury fashion house known for combining heritage with contemporary design through innovative materials and refined aesthetics.
+
+#Italy #Milan #ModernLuxury`,
+    },
+  },
+
+  루이비통남성: {
+    image: "/image/LOUISVUITTON.jpg",
+    description: {
+      ko: `루이 비통은 탁월한 장인정신과 창의성을 바탕으로 패션, 가죽제품, 슈즈, 액세서리 등 다양한 컬렉션을 선보이는 프랑스 럭셔리 메종입니다.
+
+#프랑스 #럭셔리메종 #트렁크헤리티지`,
+      en: `Louis Vuitton is a French luxury Maison renowned for exceptional craftsmanship and creativity across fashion, leather goods, shoes, accessories, and more.
+
+#France #LuxuryMaison #TrunkHeritage`,
+    },
+  },
+
+  // ─────────────────────────────
+  // 시계
+  // ─────────────────────────────
+
+  해밀턴: {
+    image: "/image/HAMILTON.png",
+    description: {
+      ko: `해밀턴은 미국의 감성과 스위스의 정밀함을 결합해 헤리티지와 혁신을 담은 타임피스를 선보이는 워치 브랜드입니다.
+
+#스위스 #카키필드 #재즈마스터`,
+      en: `Hamilton blends American spirit with Swiss precision, creating iconic timepieces rooted in heritage and innovation.
+
+#Switzerland #KhakiField #Jazzmaster`,
+    },
+  },
+
+  튜더: {
+    image: "/image/TUDOR.jpg",
+    description: {
+      ko: `튜더는 대담한 디자인과 정밀성, 뛰어난 내구성을 바탕으로 헤리티지와 현대적인 감각을 선보이는 스위스 워치 브랜드입니다.
+
+#스위스 #블랙베이 #헤리티지디자인`,
+      en: `TUDOR is a Swiss watch brand known for its bold design, precision, outstanding durability, and distinctive heritage-inspired timepieces.
+
+#Switzerland #BlackBay #HeritageDesign`,
+    },
+  },
+
+  "IWC 샤프하우젠": {
+    image: "/image/IWC.jpg",
+    description: {
+      ko: `IWC 샤프하우젠은 혁신적인 엔지니어링을 바탕으로 시대를 초월한 타임피스를 선보입니다.
+
+#스위스 #인제니어 #우주·항공`,
+      en: `IWC Schaffhausen creates timeless timepieces driven by innovative engineering.
+
+#Switzerland #Ingenieur #Aviation`,
+    },
+  },
+
+  오메가: {
+    image: "/image/OMEGA.gif",
+    description: {
+      ko: `170여 년 전통의 스위스 워치메이킹 브랜드 오메가는 달에 간 최초의 시계이자 올림픽 공식 타임키퍼로, 혁신적인 기술력과 정밀한 워치메이킹을 선보입니다.
+
+#스위스 #씨마스터 #올림픽`,
+      en: `With over 170 years of Swiss watchmaking heritage, OMEGA is known as the first watch on the Moon and the Official Timekeeper of the Olympic Games, combining innovation with exceptional precision.
+
+#Switzerland #Seamaster #Olympics`,
+    },
+  },
+
+  // ─────────────────────────────
+  // 패션 / 라이프스타일
+  // ─────────────────────────────
+
+  지미추: {
+    image: "/image/JIMMYCHOO.jpg",
+    description: {
+      ko: `지미추는 럭셔리 슈즈로 시작해 세계적인 명성을 쌓은 영국 럭셔리 패션 브랜드로, 슈즈를 중심으로 가방과 다양한 액세서리를 선보입니다.
+
+#영국 #럭셔리슈즈 #하이패션`,
+      en: `Jimmy Choo is a British luxury fashion brand renowned worldwide for its iconic shoes, offering a range of bags and accessories alongside its signature footwear.
+
+#UK #LuxuryShoes #HighFashion`,
+    },
+  },
+
+  골든구스: {
+    image: "/image/GOLDENGOOSE.png",
+    description: {
+      ko: `골든구스는 이탈리아 베니스에서 시작된 럭셔리 라이프스타일 브랜드로, ‘완벽한 불완전함’을 담은 Lived-in 디자인이 특징입니다. Co-Creation 서비스를 통해 Dream Maker와 함께 세상에 하나뿐인 나만의 제품을 완성할 수 있습니다.
+
+#이탈리아 #Co-Creation #Lived-In`,
+      en: `Golden Goose is an Italian luxury lifestyle brand from Venice, known for its “Perfect Imperfection” philosophy and distinctive lived-in designs. Through its Co-Creation service, customers can work with Dream Makers to create a one-of-a-kind personalized piece.
+
+#Italy #Co-Creation #Lived-In`,
+    },
+  },
+
+  무이: {
+    image: "/image/MUE.jpg",
+    description: {
+      ko: `MUE(무이)는 럭셔리 소비자를 위한 감각적인 큐레이션과 혁신적인 브랜드 전개를 선보이는 하이엔드 편집숍입니다.
+
+#하이엔드편집숍 #럭셔리큐레이션 #콜라보레이션`,
+      en: `MUE is a refined high-end concept store offering distinctive curation for luxury consumers and innovative brand presentations.
+
+#HighEndConceptStore #LuxuryCuration #Collaboration`,
+    },
+  },
+
+  라이카: {
+    image: "/image/LEICA.png",
+    description: {
+      ko: `라이카는 150년 이상의 역사를 바탕으로 혁신적인 기술과 독일 장인정신을 선보이는 프리미엄 카메라 브랜드입니다.
+
+#독일헤리티지 #프리미엄카메라 #클래식`,
+      en: `Leica is a premium camera brand with over 150 years of heritage, combining innovative technology with exceptional German craftsmanship.
+
+#GermanHeritage #PremiumCamera #Classic`,
+    },
+  },
+
+  "프린트 베이커리": {
+    image: "/image/PRINTBAKERY.png",
+    description: {
+      ko: `프린트베이커리는 미술 대중화를 지향하는 아트 플랫폼 브랜드입니다.
+빵을 사는 일상처럼 누구나 쉽고 가까이에서 미술을 향유하는 문화를 만들어갑니다.
+
+#아트컬렉팅 #에디션 #원화`,
+      en: `Print Bakery is an art lifestyle platform that makes art accessible to everyone, fostering a culture where people can enjoy art as easily and naturally as buying bread.
+
+#ArtCollecting #Edition #OriginalArt`,
     },
   },
 };

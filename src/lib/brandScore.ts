@@ -32,6 +32,7 @@ export const brands: Brand[] = [
       budget: { "MID-HIGH": 10, MID: 5, HIGH: 5 },
     },
   },
+
   {
     name: "alo Yoga",
     scores: {
@@ -52,6 +53,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 10, MID: 5 },
     },
   },
+
   {
     name: "베이프",
     scores: {
@@ -68,6 +70,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 10, MID: 5 },
     },
   },
+
   {
     name: "우영미",
     scores: {
@@ -89,6 +92,7 @@ export const brands: Brand[] = [
       budget: { MID: 10, "MID-LOW": 5, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "몽블랑",
     scores: {
@@ -108,6 +112,7 @@ export const brands: Brand[] = [
       budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
     },
   },
+
   {
     name: "TAG HEUER",
     scores: {
@@ -124,9 +129,10 @@ export const brands: Brand[] = [
         시계: true,
         라이프스타일: false,
       },
-      budget: { "MID-HIGH": 5, HIGH: 10 },
+      budget: { HIGH: 10 },
     },
   },
+
   {
     name: "크롬하츠선글라스",
     scores: {
@@ -146,6 +152,7 @@ export const brands: Brand[] = [
       budget: { "MID-HIGH": 5, HIGH: 10 },
     },
   },
+
   {
     name: "스와로브스키",
     scores: {
@@ -166,6 +173,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 10, MID: 5 },
     },
   },
+
   {
     name: "타임파리",
     scores: {
@@ -186,6 +194,7 @@ export const brands: Brand[] = [
       budget: { MID: 10, "MID-LOW": 5, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "피어오브갓",
     scores: {
@@ -206,6 +215,7 @@ export const brands: Brand[] = [
       budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
     },
   },
+
   {
     name: "플리츠플리츠",
     scores: {
@@ -226,6 +236,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "토템",
     scores: {
@@ -246,6 +257,7 @@ export const brands: Brand[] = [
       budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
     },
   },
+
   {
     name: "코치",
     scores: {
@@ -265,6 +277,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "옴므플리쎄",
     scores: {
@@ -285,6 +298,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "언더커버",
     scores: {
@@ -306,6 +320,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "아크네 스튜디오",
     scores: {
@@ -326,6 +341,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "아워레가시",
     scores: {
@@ -346,6 +362,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "아미",
     scores: {
@@ -366,6 +383,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "아더에러",
     scores: {
@@ -385,6 +403,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 10, MID: 5 },
     },
   },
+
   {
     name: "스톤아일랜드",
     scores: {
@@ -405,6 +424,7 @@ export const brands: Brand[] = [
       budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
     },
   },
+
   {
     name: "막스마라",
     scores: {
@@ -425,6 +445,7 @@ export const brands: Brand[] = [
       budget: { MID: 5, "MID-HIGH": 10, HIGH: 5 },
     },
   },
+
   {
     name: "랑방컬렉션",
     scores: {
@@ -444,6 +465,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "Y-3",
     scores: {
@@ -464,6 +486,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 10, MID: 5 },
     },
   },
+
   {
     name: "R13",
     scores: {
@@ -484,6 +507,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "헬렌카민스키",
     scores: {
@@ -503,6 +527,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10 },
     },
   },
+
   {
     name: "롱샴",
     scores: {
@@ -523,6 +548,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 10, MID: 5 },
     },
   },
+
   {
     name: "바오바오",
     scores: {
@@ -542,6 +568,7 @@ export const brands: Brand[] = [
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
     },
   },
+
   {
     name: "투미",
     scores: {
@@ -559,6 +586,273 @@ export const brands: Brand[] = [
         라이프스타일: false,
       },
       budget: { "MID-LOW": 5, MID: 10, "MID-HIGH": 5 },
+    },
+  },
+
+  // ─────────────────────────────
+  // 명품
+  // ─────────────────────────────
+
+  {
+    name: "프라다남성",
+    scores: {
+      gender: { male: 10, female: 0 },
+      styles: {
+        미니멀: 4,
+        "클래식 / 비즈니스": 3,
+        캐주얼: 3,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: true,
+      },
+      budget: { HIGH: 10 },
+    },
+  },
+
+  {
+    name: "루이비통남성",
+    scores: {
+      gender: { male: 10, female: 0 },
+      styles: {
+        스트리트웨어: 4,
+        "클래식 / 비즈니스": 3,
+        캐주얼: 3,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: true,
+      },
+      budget: { HIGH: 10 },
+    },
+  },
+
+  // ─────────────────────────────
+  // 시계
+  // ─────────────────────────────
+
+  {
+    name: "해밀턴",
+    scores: {
+      gender: { male: 8, female: 2 },
+      styles: {
+        캐주얼: 3,
+        "클래식 / 비즈니스": 4,
+        빈티지: 3,
+      },
+      category: {
+        의류: false,
+        가방: false,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": false,
+        시계: true,
+        라이프스타일: false,
+      },
+      budget: { "MID-HIGH": 10, HIGH: 0 },
+    },
+  },
+
+  {
+    name: "튜더",
+    scores: {
+      gender: { male: 9, female: 1 },
+      styles: {
+        "클래식 / 비즈니스": 5,
+        "스포티 / 애슬레저": 3,
+        캐주얼: 2,
+      },
+      category: {
+        의류: false,
+        가방: false,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": false,
+        시계: true,
+        라이프스타일: false,
+      },
+      budget: { "MID-HIGH": 5, HIGH: 10 },
+    },
+  },
+
+  {
+    name: "IWC 샤프하우젠",
+    scores: {
+      gender: { male: 7, female: 3 },
+      styles: {
+        캐주얼: 3,
+        "클래식 / 비즈니스": 4,
+        "스포티 / 애슬레저": 3,
+      },
+      category: {
+        의류: false,
+        가방: false,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": false,
+        시계: true,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+        HIGH: 10,
+      },
+    },
+  },
+
+  {
+    name: "오메가",
+    scores: {
+      gender: { male: 7, female: 3 },
+      styles: {
+        "클래식 / 비즈니스": 5,
+        "스포티 / 애슬레저": 4,
+        캐주얼: 1,
+      },
+      category: {
+        의류: false,
+        가방: false,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": false,
+        시계: true,
+        라이프스타일: false,
+      },
+      budget: { HIGH: 10 },
+    },
+  },
+
+  // ─────────────────────────────
+  // 패션 / 라이프스타일 신규
+  // ─────────────────────────────
+
+  {
+    name: "지미추",
+    scores: {
+      gender: { male: 1, female: 9 },
+      styles: {
+        페미닌: 6,
+        "클래식 / 비즈니스": 5,
+      },
+      category: {
+        의류: false,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+        HIGH: 0,
+      },
+    },
+  },
+
+  {
+    name: "골든구스",
+    scores: {
+      gender: { male: 4, female: 6 },
+      styles: {
+        젠더리스: 2,
+        캐주얼: 3,
+        빈티지: 5,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        "MID-LOW": 5,
+        MID: 10,
+        "MID-HIGH": 5,
+        HIGH: 0,
+      },
+    },
+  },
+
+  {
+    name: "무이",
+    scores: {
+      gender: { male: 5, female: 5 },
+      styles: {
+        스트리트웨어: 4,
+        빈티지: 4,
+        "클래식 / 비즈니스": 2,
+      },
+      category: {
+        의류: true,
+        가방: true,
+        신발: true,
+        "악세사리(주얼리,모자,선글라스)": true,
+        시계: false,
+        라이프스타일: false,
+      },
+      budget: {
+        MID: 5,
+        "MID-HIGH": 10,
+        HIGH: 5,
+      },
+    },
+  },
+
+  {
+    name: "라이카",
+    scores: {
+      gender: { male: 7, female: 3 },
+      styles: {
+        "클래식 / 비즈니스": 6,
+        빈티지: 4,
+      },
+      category: {
+        의류: false,
+        가방: false,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": false,
+        시계: false,
+        라이프스타일: true,
+      },
+      budget: {
+        "MID-HIGH": 5,
+        HIGH: 10,
+      },
+    },
+  },
+
+  {
+    name: "프린트 베이커리",
+    scores: {
+      gender: { male: 2, female: 8 },
+      styles: {
+        미니멀: 4,
+        캐주얼: 3,
+        "클래식 / 비즈니스": 2,
+        젠더리스: 1,
+      },
+      category: {
+        의류: false,
+        가방: false,
+        신발: false,
+        "악세사리(주얼리,모자,선글라스)": false,
+        시계: false,
+        라이프스타일: true,
+      },
+      budget: {
+        "MID-HIGH": 5,
+        HIGH: 10,
+      },
     },
   },
 ];
