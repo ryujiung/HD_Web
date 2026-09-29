@@ -2,19 +2,22 @@
 
 import { getTopBrands } from "@/lib/brandScore";
 import { brandInfo } from "@/lib/brandInfo";
-import { Answers } from "./StepForm";
+import { Answers, Language } from "./StepForm";
 
 export default function Result({
   answer,
   onReset,
+  language,
 }: {
   answer: Answers;
   onReset: () => void;
+  language: Language;
 }) {
   const results = getTopBrands(answer);
   const topBrand = results[0];
 
   const info = brandInfo[topBrand.name];
+  const isKorean = language === "ko";
 
   return (
     <div className="space-y-5">
@@ -26,11 +29,13 @@ export default function Result({
         </p>
 
         <h2 className="text-2xl font-semibold tracking-[-0.02em]">
-          추천 브랜드 TOP 3
+          {isKorean ? "추천 브랜드 TOP 3" : "TOP 3 BRAND MATCHES"}
         </h2>
 
         <p className="text-sm text-[#8A8680] mt-2">
-          선택하신 취향을 바탕으로 추천해드려요.
+          {isKorean
+            ? "선택하신 취향을 바탕으로 추천해드려요."
+            : "Based on your preferences, here are our recommendations."}
         </p>
       </div>
 
@@ -79,13 +84,15 @@ export default function Result({
               </div>
             )}
 
-            {/* 현재는 한국어만 노출 */}
+            {/* 선택한 언어에 맞춰 브랜드 설명 전환 */}
             <p
               className={`text-[14px] leading-6 text-[#68645E] whitespace-pre-line ${
                 info.image ? "mt-5" : ""
               }`}
             >
-              {info.description.ko}
+              {isKorean
+                ? info.description.ko
+                : info.description.en}
             </p>
           </>
         )}
@@ -139,7 +146,9 @@ export default function Result({
           hover:bg-black
         "
       >
-        처음부터 다시 선택하기
+        {isKorean
+          ? "처음부터 다시 선택하기"
+          : "Start Over"}
       </button>
     </div>
   );

@@ -1,47 +1,73 @@
-import OptionButton from "./OptionButton";
+"use client";
 
-const budgets = [
+import OptionButton from "./OptionButton";
+import { Language } from "./StepForm";
+
+const budgetOptions = [
   {
-    label: "MID-LOW(~ 50만원)",
     value: "MID-LOW",
+    ko: "50만원 이하",
+    en: "Under ₩500K",
   },
   {
-    label: "MID(50만원 ~ 150만원)",
     value: "MID",
+    ko: "50 ~ 100만원",
+    en: "₩500K – ₩1M",
   },
   {
-    label: "MID-HIGH(150만원 ~ 300만원)",
     value: "MID-HIGH",
+    ko: "100 ~ 300만원",
+    en: "₩1M – ₩3M",
   },
   {
-    label: "HIGH(300만원 이상)",
     value: "HIGH",
-  },
-  {
-    label: "잘 모르겠어요",
-    value: undefined,
+    ko: "300만원 이상",
+    en: "Over ₩3M",
   },
 ];
 
 export default function StepBudget({
   onSelect,
+  language,
 }: {
-  onSelect: (v: string | undefined) => void;
+  onSelect: (v?: string) => void;
+  language: Language;
 }) {
-  return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-bold">
-        주로 어떤 가격대의 브랜드를 선호하세요?
-      </h2>
+  const isKorean = language === "ko";
 
-      <div className="grid grid-cols-2 gap-4">
-        {budgets.map(({ label, value }) => (
+  return (
+    <div className="space-y-6 py-4">
+      <div>
+        <p className="text-xs tracking-[0.2em] text-[#9A8662] mb-3">
+          04
+        </p>
+
+        <h2 className="text-2xl font-semibold tracking-[-0.02em]">
+          {isKorean
+            ? "예산을 선택해주세요"
+            : "Select your budget"}
+        </h2>
+
+        <p className="text-sm text-[#8A8680] mt-2">
+          {isKorean
+            ? "쇼핑을 위해 생각하고 있는 예산을 선택해주세요."
+            : "Choose the budget range you have in mind."}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        {budgetOptions.map((budget) => (
           <OptionButton
-            key={label}
-            label={label}
-            onClick={() => onSelect(value)}
+            key={budget.value}
+            label={isKorean ? budget.ko : budget.en}
+            onClick={() => onSelect(budget.value)}
           />
         ))}
+
+        <OptionButton
+          label={isKorean ? "상관없음" : "No Preference"}
+          onClick={() => onSelect(undefined)}
+        />
       </div>
     </div>
   );
